@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors, spacing, typography } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -47,13 +48,62 @@ export const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 4,
   },
+  extrasContainer: {
+    marginTop: spacing.xs,
+    marginBottom: spacing.xs,
+  },
+  extraText: {
+    ...typography.caption,
+    color: colors.textSecondary,
+    marginBottom: 2,
+  },
+  optionsContainer: {
+    marginTop: spacing.xs,
+    marginBottom: spacing.xs,
+  },
+  optionText: {
+    ...typography.caption,
+    color: colors.textSecondary,
+  },
+  itemPriceRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: spacing.xs,
+  },
   itemPrice: {
     fontSize: 14,
     color: '#999',
+    marginRight: spacing.sm,
+  },
+  extrasPrice: {
+    fontSize: 12,
+    color: colors.primary,
+    fontWeight: '500',
   },
   itemControls: {
     alignItems: 'flex-end',
     justifyContent: 'space-between',
+    minWidth: 100,
+  },
+  itemActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: spacing.sm,
+  },
+  editButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    marginRight: spacing.sm,
+    borderRadius: 6,
+    backgroundColor: colors.badgeSoft,
+  },
+  editButtonText: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: colors.primary,
+    marginLeft: 4,
   },
   quantityControls: {
     flexDirection: 'row',
@@ -81,7 +131,8 @@ export const styles = StyleSheet.create({
   itemTotal: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#e91e63',
+    color: colors.primary,
+    marginTop: spacing.sm,
   },
   removeButton: {
     padding: 4,
@@ -178,5 +229,6 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
   },
 });
+
 
 

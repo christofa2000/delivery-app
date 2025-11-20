@@ -1,14 +1,17 @@
 import React, { FC, useMemo } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import FoodCard from '@/components/food-card';
 import { categorySections } from '@/services/constants/mock-data';
 import { useCartStore } from '@/services/store/cart-store';
 import { FoodItem } from '@/services/types/api-types';
+import { spacing } from '@/services/constants/theme';
 import { styles } from './styles';
 
 const Offers: FC = () => {
   const { addItem } = useCartStore();
+  const insets = useSafeAreaInsets();
 
   // Filtrar solo productos en oferta
   const offerItems = useMemo(() => {
@@ -39,18 +42,21 @@ const Offers: FC = () => {
   // Si no hay ofertas
   if (offerItems.length === 0) {
     return (
-      <View style={styles.emptyContainer}>
-        <Ionicons name="pricetags-outline" size={100} color={styles.emptyIcon.color} />
-        <Text style={styles.emptyTitle}>Sin ofertas disponibles</Text>
-        <Text style={styles.emptySubtitle}>
-          No hay ofertas por el momento, pero pronto volverán con increíbles descuentos 🎉
-        </Text>
-      </View>
+      <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+        <View style={[styles.emptyContainer, { paddingBottom: insets.bottom + spacing.lg }]}>
+          <Ionicons name="pricetags-outline" size={100} color={styles.emptyIcon.color} />
+          <Text style={styles.emptyTitle}>Sin ofertas disponibles</Text>
+          <Text style={styles.emptySubtitle}>
+            No hay ofertas por el momento, pero pronto volverán con increíbles descuentos 🎉
+          </Text>
+        </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+      <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerContent}>
@@ -73,10 +79,14 @@ const Offers: FC = () => {
         keyExtractor={(item) => item.id}
         numColumns={2}
         columnWrapperStyle={styles.row}
-        contentContainerStyle={styles.listContent}
+        contentContainerStyle={[
+          styles.listContent,
+          { paddingBottom: insets.bottom + spacing.lg },
+        ]}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

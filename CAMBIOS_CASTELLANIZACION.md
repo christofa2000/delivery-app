@@ -199,3 +199,4 @@ La aplicación ahora está completamente en castellano con:
 **¡Toda la navegación está lista en castellano!** 🇦🇷🎨
 
 
+

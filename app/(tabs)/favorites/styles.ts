@@ -2,12 +2,18 @@ import { StyleSheet } from 'react-native';
 import { colors, spacing, radii, typography, shadows } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.backgroundSoft,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.backgroundSoft,
     padding: spacing.xl,
+    paddingTop: spacing.xl,
+    // paddingBottom se maneja dinámicamente con insets
   },
   iconContainer: {
     backgroundColor: colors.badgeSoft,

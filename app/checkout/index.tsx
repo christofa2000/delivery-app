@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useCartStore } from '@/services/store/cart-store';
 import { styles } from './styles';
 
@@ -19,6 +20,7 @@ const PAYMENT_METHODS = [
 const Checkout: FC = () => {
   const { items, getTotal, clearCart } = useCartStore();
   const [selectedPayment, setSelectedPayment] = useState<PaymentMethod>('efectivo');
+  const insets = useSafeAreaInsets();
 
   const subtotal = getTotal();
   const total = subtotal + DELIVERY_COST;
@@ -54,25 +56,28 @@ const Checkout: FC = () => {
   // Si no hay items, redirigir
   if (items.length === 0) {
     return (
-      <View style={styles.emptyContainer}>
-        <Ionicons name="basket-outline" size={80} color="#ddd" />
-        <Text style={styles.emptyTitle}>No hay productos para confirmar</Text>
-        <Text style={styles.emptySubtitle}>
-          Agregá productos a tu carrito para continuar
-        </Text>
-        <TouchableOpacity
-          style={styles.emptyButton}
-          onPress={() => router.replace('/(tabs)' as any)}
-          activeOpacity={0.8}
-        >
-          <Text style={styles.emptyButtonText}>Ir al inicio</Text>
-        </TouchableOpacity>
-      </View>
+      <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
+        <View style={styles.emptyContainer}>
+          <Ionicons name="basket-outline" size={80} color="#ddd" />
+          <Text style={styles.emptyTitle}>No hay productos para confirmar</Text>
+          <Text style={styles.emptySubtitle}>
+            Agregá productos a tu carrito para continuar
+          </Text>
+          <TouchableOpacity
+            style={styles.emptyButton}
+            onPress={() => router.replace('/(tabs)' as any)}
+            activeOpacity={0.8}
+          >
+            <Text style={styles.emptyButtonText}>Ir al inicio</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
+      <View style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
@@ -180,7 +185,7 @@ const Checkout: FC = () => {
       </ScrollView>
 
       {/* Footer con botones */}
-      <View style={styles.footer}>
+      <View style={[styles.footer, { paddingBottom: insets.bottom + 12 }]}>
         <TouchableOpacity
           style={styles.confirmButton}
           onPress={handleConfirmOrder}
@@ -198,10 +203,12 @@ const Checkout: FC = () => {
           <Text style={styles.backButtonText}>Volver al carrito</Text>
         </TouchableOpacity>
       </View>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 
 export default Checkout;
+
 
 

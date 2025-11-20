@@ -2,11 +2,14 @@ import React, { FC, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuthStore } from '@/services/store/auth-store';
+import { spacing } from '@/services/constants/theme';
 import { styles } from './styles';
 
 const Account: FC = () => {
   const { user, isAuthenticated, logout, loadUser, isLoaded } = useAuthStore();
+  const insets = useSafeAreaInsets();
 
   // Cargar usuario al montar el componente
   useEffect(() => {
@@ -48,7 +51,8 @@ const Account: FC = () => {
   // Estado de invitado (no autenticado)
   if (!isAuthenticated || !user) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+        <View style={[styles.container, { paddingBottom: insets.bottom + spacing.lg }]}>
         <View style={styles.iconContainer}>
           <Ionicons name="person-circle-outline" size={100} color={styles.icon.color} />
         </View>
@@ -83,12 +87,20 @@ const Account: FC = () => {
           <Text style={styles.registerButtonText}>Crear cuenta nueva</Text>
         </TouchableOpacity>
       </View>
+      </SafeAreaView>
     );
   }
 
   // Estado autenticado
   return (
-    <ScrollView style={styles.authenticatedContainer} contentContainerStyle={styles.scrollContent}>
+    <SafeAreaView style={styles.safeArea} edges={['top', 'bottom']}>
+      <ScrollView
+        style={styles.authenticatedContainer}
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingBottom: insets.bottom + spacing.lg },
+        ]}
+      >
       {/* Header con info del usuario */}
       <View style={styles.userHeader}>
         <View style={styles.userIconContainer}>
@@ -159,6 +171,7 @@ const Account: FC = () => {
         <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
       </TouchableOpacity>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 

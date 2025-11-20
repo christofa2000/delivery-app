@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Alert, Image } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { getFoodItemById } from '@/services/utils/get-food-item';
 import { useCartStore } from '@/services/store/cart-store';
 import { styles } from './styles';
@@ -10,6 +11,7 @@ const RestaurantDetail: FC = () => {
   const { id } = useLocalSearchParams<{ id: string }>();
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCartStore();
+  const insets = useSafeAreaInsets();
 
   // Buscar el producto por ID
   const foodItem = id ? getFoodItemById(id) : null;
@@ -17,21 +19,23 @@ const RestaurantDetail: FC = () => {
   // Manejar caso de producto no encontrado
   if (!foodItem) {
     return (
-      <View style={styles.errorContainer}>
-        <Ionicons name="alert-circle-outline" size={80} color="#e91e63" />
-        <Text style={styles.errorTitle}>Producto no encontrado</Text>
-        <Text style={styles.errorSubtitle}>
-          No pudimos encontrar el producto que buscás
-        </Text>
-        <TouchableOpacity
-          style={styles.backButton}
-          onPress={() => router.back()}
-          activeOpacity={0.8}
-        >
-          <Ionicons name="arrow-back" size={20} color="#fff" />
-          <Text style={styles.backButtonText}>Volver atrás</Text>
-        </TouchableOpacity>
-      </View>
+      <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
+        <View style={styles.errorContainer}>
+          <Ionicons name="alert-circle-outline" size={80} color="#e91e63" />
+          <Text style={styles.errorTitle}>Producto no encontrado</Text>
+          <Text style={styles.errorSubtitle}>
+            No pudimos encontrar el producto que buscás
+          </Text>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => router.back()}
+            activeOpacity={0.8}
+          >
+            <Ionicons name="arrow-back" size={20} color="#fff" />
+            <Text style={styles.backButtonText}>Volver atrás</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     );
   }
 
@@ -67,7 +71,8 @@ const RestaurantDetail: FC = () => {
   const subtotal = foodItem.price * quantity;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
+      <View style={styles.container}>
       <ScrollView
         style={styles.scrollView}
         showsVerticalScrollIndicator={false}
@@ -134,7 +139,7 @@ const RestaurantDetail: FC = () => {
       </ScrollView>
 
       {/* Footer con controles y botón */}
-      <View style={styles.footer}>
+      <View style={[styles.footer, { paddingBottom: insets.bottom + 12 }]}>
         {/* Controles de cantidad */}
         <View style={styles.quantityContainer}>
           <Text style={styles.quantityLabel}>Cantidad</Text>
@@ -180,7 +185,8 @@ const RestaurantDetail: FC = () => {
           <Text style={styles.addToCartButtonText}>Agregar al carrito</Text>
         </TouchableOpacity>
       </View>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

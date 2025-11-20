@@ -2,6 +2,7 @@ import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs, router } from 'expo-router';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
@@ -84,6 +85,7 @@ const headerStyles = StyleSheet.create({
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
@@ -110,11 +112,23 @@ export default function TabLayout() {
           tabBarInactiveTintColor: colors.muted,
           tabBarStyle: {
             backgroundColor: colors.footer,
-            borderTopWidth: 1,
-            borderTopColor: colors.border,
-            height: 60,
-            paddingBottom: spacing.sm,
-            paddingTop: spacing.sm,
+            borderTopWidth: 0,
+            borderTopColor: 'transparent',
+            height: 64,
+            paddingBottom: 8,
+            paddingTop: 6,
+            // Tab bar flotante
+            position: 'absolute',
+            left: spacing.lg,
+            right: spacing.lg,
+            bottom: insets.bottom + 8,
+            borderRadius: radii.lg,
+            // Sombra ligera para efecto flotante
+            shadowColor: '#000',
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.1,
+            shadowRadius: 8,
+            elevation: 8,
           },
           headerStyle: {
             backgroundColor: colors.header,
@@ -127,6 +141,11 @@ export default function TabLayout() {
           },
           headerTintColor: colors.textPrimary,
           headerShown: useClientOnlyValue(false, true),
+          // Levantar el contenido para no quedar detrás del tab bar flotante
+          sceneStyle: {
+            paddingBottom: 80,
+            backgroundColor: colors.backgroundSoft,
+          },
           // Establecer título por defecto (será sobrescrito por headerTitle en options individuales)
           title: title,
           headerTitle: title,

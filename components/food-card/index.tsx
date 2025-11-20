@@ -1,24 +1,45 @@
-import React, { FC } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import React, { FC, useState } from 'react';
+import { View, Text, TouchableOpacity, Image, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { useCartStore } from '@/services/store/cart-store';
+import AddToCartModal from '@/components/add-to-cart-modal';
+import { AddToCartData } from '@/components/add-to-cart-modal/types';
 import { FoodCardProps } from './types';
 import { styles } from './styles';
 
 const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
   const router = useRouter();
+  const { addItem } = useCartStore();
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleCardPress = () => {
-    // Si hay un onPress personalizado, usarlo; sino navegar al detalle
+    // Si hay un onPress personalizado, usarlo; sino navegar al detalle del producto
     if (onPress) {
       onPress();
     } else {
-      router.push(`/restaurant/${item.id}` as any);
+      router.push(`/product/${item.id}` as any);
     }
   };
 
-  const handleAddToCart = (e: any) => {
+  const handleAddToCartClick = (e: any) => {
     e?.stopPropagation?.();
+    
+    // Si el producto tiene extras u opciones, abrir modal
+    if (item.extras || item.selectOptions) {
+      setIsModalVisible(true);
+    } else if (onAddToCart) {
+      // Si no tiene extras/opciones y hay callback personalizado, usarlo
+      onAddToCart(item);
+    } else {
+      // Si no tiene extras/opciones, agregar directamente
+      addItem(item);
+    }
+  };
+
+  const handleModalConfirm = (data: AddToCartData) => {
+    addItem(item, data);
+    setIsModalVisible(false);
     if (onAddToCart) {
       onAddToCart(item);
     }
@@ -79,14 +100,24 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
         </View>
       </View>
 
-      {onAddToCart && (
+      {(onAddToCart || true) && (
         <TouchableOpacity
           style={styles.addButton}
-          onPress={handleAddToCart}
+          onPress={handleAddToCartClick}
           activeOpacity={0.7}
         >
           <Ionicons name="add" size={20} color="#FFFFFF" />
         </TouchableOpacity>
+      )}
+
+      {/* Modal para productos con extras/opciones */}
+      {(item.extras || item.selectOptions) && (
+        <AddToCartModal
+          visible={isModalVisible}
+          onClose={() => setIsModalVisible(false)}
+          foodItem={item}
+          onConfirm={handleModalConfirm}
+        />
       )}
     </TouchableOpacity>
   );

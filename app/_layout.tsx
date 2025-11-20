@@ -6,6 +6,7 @@ import { Stack, router } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { TouchableOpacity } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 import {
   Inter_400Regular,
@@ -62,8 +63,9 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack
+    <SafeAreaProvider>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <Stack
         screenOptions={{
           headerStyle: {
             backgroundColor: colors.header,
@@ -139,6 +141,21 @@ function RootLayoutNav() {
           }} 
         />
         <Stack.Screen 
+          name="product/[id]/index" 
+          options={{ 
+            title: 'Detalles del producto',
+            headerLeft: () => (
+              <TouchableOpacity 
+                onPress={() => router.back()} 
+                style={{ paddingHorizontal: spacing.md }}
+                activeOpacity={0.7}
+              >
+                <Ionicons name="arrow-back" size={24} color={colors.primary} />
+              </TouchableOpacity>
+            ),
+          }} 
+        />
+        <Stack.Screen 
           name="(auth)/login/index" 
           options={{ 
             title: 'Iniciar sesión',
@@ -156,5 +173,6 @@ function RootLayoutNav() {
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
     </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

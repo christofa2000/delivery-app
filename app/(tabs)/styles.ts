@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.backgroundSoft,
+  },
   container: {
     flex: 1,
     backgroundColor: colors.backgroundSoft,
@@ -10,7 +14,9 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: spacing.xl,
+    flexGrow: 1,
+    paddingTop: spacing.lg,
+    // paddingBottom se maneja dinámicamente con insets
   },
   categorySection: {
     marginTop: spacing.xl,

@@ -2,6 +2,10 @@ import { StyleSheet } from 'react-native';
 import { colors, spacing, radii, typography, shadows } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.backgroundSoft,
+  },
   container: {
     flex: 1,
     backgroundColor: colors.backgroundSoft,
@@ -54,6 +58,8 @@ export const styles = StyleSheet.create({
   },
   listContent: {
     padding: spacing.lg,
+    flexGrow: 1,
+    // paddingBottom se maneja dinámicamente con insets
   },
   row: {
     justifyContent: 'space-between',
@@ -67,7 +73,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: spacing.xxl,
+    paddingTop: spacing.xxl,
     backgroundColor: colors.backgroundSoft,
+    // paddingBottom se maneja dinámicamente con insets
   },
   emptyIcon: {
     color: colors.primary,

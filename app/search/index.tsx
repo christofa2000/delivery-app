@@ -1,13 +1,13 @@
 import React, { FC, useState, useEffect } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import SearchBar from '@/components/search-bar';
 import FoodCard from '@/components/food-card';
 import { useSearch } from '@/services/hooks/use-search';
 import { useCartStore } from '@/services/store/cart-store';
 import { FoodItem, FoodCategory } from '@/services/types/api-types';
 import { styles } from './styles';
-import { TouchableOpacity } from 'react-native';
 
 // Categorías disponibles para filtros
 const CATEGORIES = [
@@ -88,38 +88,40 @@ const Search: FC = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <SearchBar
-        value={searchQuery}
-        onChangeText={setSearchQuery}
-        placeholder="¿Qué querés pedir hoy?"
-      />
-
-      <View style={styles.filtersContainer}>
-        <FlatList
-          data={CATEGORIES}
-          renderItem={renderCategoryFilter}
-          keyExtractor={(item) => item.id}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoriesList}
+    <SafeAreaView style={{ flex: 1 }} edges={['top', 'bottom']}>
+      <View style={styles.container}>
+        <SearchBar
+          value={searchQuery}
+          onChangeText={setSearchQuery}
+          placeholder="¿Qué querés pedir hoy?"
         />
+
+        <View style={styles.filtersContainer}>
+          <FlatList
+            data={CATEGORIES}
+            renderItem={renderCategoryFilter}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.categoriesList}
+          />
+        </View>
+
+        {hasResults ? (
+          <FlatList
+            data={results}
+            renderItem={renderFoodItem}
+            keyExtractor={(item) => item.id}
+            contentContainerStyle={styles.resultsList}
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+            columnWrapperStyle={styles.row}
+          />
+        ) : (
+          renderEmptyState()
+        )}
       </View>
-
-      {hasResults ? (
-        <FlatList
-          data={results}
-          renderItem={renderFoodItem}
-          keyExtractor={(item) => item.id}
-          contentContainerStyle={styles.resultsList}
-          showsVerticalScrollIndicator={false}
-          numColumns={2}
-          columnWrapperStyle={styles.row}
-        />
-      ) : (
-        renderEmptyState()
-      )}
-    </View>
+    </SafeAreaView>
   );
 };
 

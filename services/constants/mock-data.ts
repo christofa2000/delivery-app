@@ -7,7 +7,7 @@ export const popularItems: FoodItem[] = [
   {
     id: 'pop-1',
     name: 'Burger Clásica con Papas',
-    price: 890,
+    price: 8900,
     restaurant: 'The Burger Lab',
     deliveryTime: '25-35 min',
     category: 'popular',
@@ -16,23 +16,58 @@ export const popularItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 20,
-    originalPrice: 1112,
+    originalPrice: 11120,
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+      { id: 'papas_cheddar', name: 'Papas con cheddar', price: 12000 },
+      { id: 'bacon_extra', name: 'Bacon extra', price: 6000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pop-2',
     name: 'Sushi Variado (24 piezas)',
-    price: 1450,
+    price: 14500,
     restaurant: 'Sushi Master',
     deliveryTime: '30-40 min',
     category: 'popular',
     rating: 4.9,
     description: 'Selección de 24 piezas de sushi premium: California rolls, Philadelphia rolls, rolls de salmón y atún, más nigiri variado. Incluye salsa de soja, wasabi y jengibre.',
     image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pop-3',
     name: 'Pizza Muzzarella Familiar',
-    price: 1200,
+    price: 12000,
     restaurant: 'La Napoletana',
     deliveryTime: '20-30 min',
     category: 'popular',
@@ -41,29 +76,83 @@ export const popularItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 15,
-    originalPrice: 1412,
+    originalPrice: 14120,
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+      { id: 'oregano', name: 'Orégano extra', price: 0 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pop-4',
     name: 'Ceviche de Pescado',
-    price: 980,
+    price: 9800,
     restaurant: 'Sabor Peruano',
     deliveryTime: '25-35 min',
     category: 'popular',
     rating: 4.9,
     description: 'Pescado fresco del día marinado en limón, con cebolla morada, cilantro, ají limo y camote. Acompañado de choclo y cancha. Receta tradicional peruana.',
     image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pop-5',
     name: 'Tacos al Pastor (4 unidades)',
-    price: 750,
+    price: 7500,
     restaurant: 'Taquería México',
     deliveryTime: '15-25 min',
     category: 'popular',
     rating: 4.6,
     description: 'Tacos con carne de cerdo marinada al estilo tradicional mexicano, piña asada, cebolla, cilantro y salsa verde. Tortillas de maíz hechas a mano.',
     image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
 ];
 
@@ -74,18 +163,43 @@ export const burgersItems: FoodItem[] = [
   {
     id: 'burg-1',
     name: 'Bacon Cheese Burger',
-    price: 950,
+    price: 9500,
     restaurant: 'The Burger Lab',
     deliveryTime: '25-35 min',
     category: 'hamburguesas',
     rating: 4.8,
     description: 'Hamburguesa gourmet con doble carne, bacon ahumado crujiente, queso cheddar fundido, cebolla caramelizada y salsa BBQ especial. Incluye papas rústicas.',
     image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+      { id: 'papas_cheddar', name: 'Papas con cheddar', price: 12000 },
+      { id: 'bacon_extra', name: 'Bacon extra', price: 6000 },
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'burg-2',
     name: 'Doble Cheddar XL',
-    price: 1100,
+    price: 11000,
     restaurant: 'Burger King',
     deliveryTime: '20-30 min',
     category: 'hamburguesas',
@@ -94,40 +208,109 @@ export const burgersItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 30,
-    originalPrice: 1571,
+    originalPrice: 15710,
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+      { id: 'papas_cheddar', name: 'Papas con cheddar', price: 12000 },
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'burg-3',
     name: 'Chicken Crispy Burger',
-    price: 820,
+    price: 8200,
     restaurant: 'Crispy Town',
     deliveryTime: '25-30 min',
     category: 'hamburguesas',
     rating: 4.6,
     description: 'Suprema de pollo crocante empanada, lechuga fresca, tomate, mayonesa casera y queso. Perfecta para los que prefieren pollo.',
     image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'burg-4',
     name: 'Veggie Mushroom Burger',
-    price: 880,
+    price: 8800,
     restaurant: 'Green Burgers',
     deliveryTime: '30-40 min',
     category: 'hamburguesas',
     rating: 4.7,
     description: 'Medallón 100% vegetal a base de hongos portobello, quinoa y legumbres. Con queso vegano, rúcula y tomates secos. Opción saludable y deliciosa.',
-    image: 'https://images.unsplash.com/photo-1585238341710-4a8e37674134?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'burg-5',
     name: 'Triple Meat Monster',
-    price: 1350,
+    price: 13500,
     restaurant: 'The Burger Lab',
     deliveryTime: '25-35 min',
     category: 'hamburguesas',
     rating: 4.9,
     description: 'Para los más hambrientos: tres medallones de carne premium, triple queso, bacon, cebolla crispy y salsa secreta. Un verdadero desafío. Incluye papas XXL.',
     image: 'https://images.unsplash.com/photo-1603064752734-4c48eff53d05?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'papas', name: 'Papas solas', price: 8000 },
+      { id: 'papas_cheddar', name: 'Papas con cheddar', price: 12000 },
+      { id: 'bacon_extra', name: 'Bacon extra', price: 6000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
 ];
 
@@ -138,18 +321,29 @@ export const sushiItems: FoodItem[] = [
   {
     id: 'sush-1',
     name: 'Sushi Mix (30 piezas)',
-    price: 1680,
+    price: 16800,
     restaurant: 'Sushi Master',
     deliveryTime: '30-40 min',
     category: 'sushi',
     rating: 4.9,
     description: 'Combo premium de 30 piezas: California, Philadelphia, rolls de salmón, atún y langostinos, más sashimi y nigiri variado. El combo más completo.',
     image: 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'sush-2',
     name: 'California Rolls',
-    price: 890,
+    price: 8900,
     restaurant: 'Sakura Sushi',
     deliveryTime: '25-35 min',
     category: 'sushi',
@@ -158,23 +352,45 @@ export const sushiItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 25,
-    originalPrice: 1187,
+    originalPrice: 11870,
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'sush-3',
     name: 'Sashimi de Salmón',
-    price: 1250,
+    price: 12500,
     restaurant: 'Sushi Master',
     deliveryTime: '30-40 min',
     category: 'sushi',
     rating: 4.8,
     description: 'Láminas de salmón rosado premium sin arroz. 12 cortes perfectos. Para los puristas que aprecian el sabor del pescado fresco.',
     image: 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+    ],
   },
   {
     id: 'sush-4',
     name: 'Tempura Roll Especial',
-    price: 980,
+    price: 9800,
     restaurant: 'Tokyo House',
     deliveryTime: '35-45 min',
     category: 'sushi',
@@ -185,7 +401,7 @@ export const sushiItems: FoodItem[] = [
   {
     id: 'sush-5',
     name: 'Poke Bowl Salmón',
-    price: 1150,
+    price: 11500,
     restaurant: 'Sakura Sushi',
     deliveryTime: '25-35 min',
     category: 'sushi',
@@ -202,18 +418,37 @@ export const peruanaItems: FoodItem[] = [
   {
     id: 'peru-1',
     name: 'Lomo Saltado',
-    price: 1180,
+    price: 11800,
     restaurant: 'Sabor Peruano',
     deliveryTime: '25-35 min',
     category: 'peruana',
     rating: 4.9,
     description: 'Tiras de lomo salteado al wok con cebolla, tomate, ají amarillo y sillao. Acompañado de papas fritas y arroz blanco. Plato emblema de la cocina peruana.',
     image: 'https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'peru-2',
     name: 'Ceviche Mixto',
-    price: 1050,
+    price: 10500,
     restaurant: 'Cevichería del Mar',
     deliveryTime: '20-30 min',
     category: 'peruana',
@@ -222,7 +457,26 @@ export const peruanaItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 20,
-    originalPrice: 1312,
+    originalPrice: 13120,
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'peru-3',
@@ -234,22 +488,60 @@ export const peruanaItems: FoodItem[] = [
     rating: 4.7,
     description: 'Pollo deshilachado en crema de ají amarillo, nueces y queso parmesano. Servido con papas doradas, aceitunas y huevo. Comfort food peruano.',
     image: 'https://images.unsplash.com/photo-1604909052743-94e838986d24?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'peru-4',
     name: 'Arroz con Mariscos',
-    price: 1280,
+    price: 12800,
     restaurant: 'Cevichería del Mar',
     deliveryTime: '30-40 min',
     category: 'peruana',
     rating: 4.8,
     description: 'Arroz cremoso con calamares, langostinos, mejillones y pulpo, cocido en salsa de ají panca y vino blanco. Generosa porción marina.',
     image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'peru-5',
     name: 'Causa Limeña',
-    price: 780,
+    price: 7800,
     restaurant: 'Sabor Peruano',
     deliveryTime: '20-30 min',
     category: 'peruana',
@@ -266,7 +558,7 @@ export const vegetarianoItems: FoodItem[] = [
   {
     id: 'veg-1',
     name: 'Bowl Vegano Completo',
-    price: 920,
+    price: 9200,
     restaurant: 'Green Life',
     deliveryTime: '25-35 min',
     category: 'vegetariano',
@@ -275,12 +567,12 @@ export const vegetarianoItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 15,
-    originalPrice: 1082,
+    originalPrice: 10820,
   },
   {
     id: 'veg-2',
     name: 'Ensalada César Veggie',
-    price: 780,
+    price: 7800,
     restaurant: 'Salad Bar',
     deliveryTime: '15-25 min',
     category: 'vegetariano',
@@ -291,7 +583,7 @@ export const vegetarianoItems: FoodItem[] = [
   {
     id: 'veg-3',
     name: 'Wrap de Falafel',
-    price: 850,
+    price: 8500,
     restaurant: 'Green Life',
     deliveryTime: '20-30 min',
     category: 'vegetariano',
@@ -302,7 +594,7 @@ export const vegetarianoItems: FoodItem[] = [
   {
     id: 'veg-4',
     name: 'Lasagna de Verduras',
-    price: 990,
+    price: 9900,
     restaurant: 'Veggie House',
     deliveryTime: '30-40 min',
     category: 'vegetariano',
@@ -313,7 +605,7 @@ export const vegetarianoItems: FoodItem[] = [
   {
     id: 'veg-5',
     name: 'Quinoa Power Bowl',
-    price: 880,
+    price: 8800,
     restaurant: 'Salad Bar',
     deliveryTime: '20-30 min',
     category: 'vegetariano',
@@ -330,51 +622,180 @@ export const pizzasItems: FoodItem[] = [
   {
     id: 'pizza-1',
     name: 'Pizza Napolitana',
-    price: 1150,
+    price: 11500,
     restaurant: 'La Napoletana',
     deliveryTime: '20-30 min',
     category: 'pizzas',
     rating: 4.8,
     description: 'Pizza clásica con salsa de tomate, muzzarella, tomates frescos, ajo y albahaca. Masa artesanal a la piedra. Tradición italiana auténtica.',
     image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+      { id: 'oregano', name: 'Orégano extra', price: 0 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+      {
+        id: 'cerveza',
+        name: 'Cerveza',
+        values: [
+          { id: 'rubia', name: 'Cerveza Rubia', price: 8000 },
+          { id: 'negra', name: 'Cerveza Negra', price: 8000 },
+          { id: 'ipa', name: 'IPA', price: 10000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pizza-2',
     name: 'Pizza Cuatro Quesos',
-    price: 1280,
+    price: 12800,
     restaurant: 'Don Antonio',
     deliveryTime: '25-35 min',
     category: 'pizzas',
     rating: 4.7,
     description: 'Blend de muzzarella, provolone, fontina y gorgonzola sobre salsa blanca. Para los verdaderos amantes del queso. Cremosa y deliciosa.',
     image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+      {
+        id: 'cerveza',
+        name: 'Cerveza',
+        values: [
+          { id: 'rubia', name: 'Cerveza Rubia', price: 8000 },
+          { id: 'negra', name: 'Cerveza Negra', price: 8000 },
+          { id: 'ipa', name: 'IPA', price: 10000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pizza-3',
     name: 'Pizza Calabresa',
-    price: 1190,
+    price: 11900,
     restaurant: 'La Napoletana',
     deliveryTime: '20-30 min',
     category: 'pizzas',
     rating: 4.8,
     description: 'Muzzarella, rodajas de salame calabrés, aceitunas negras y orégano. Borde relleno disponible. Clásico que nunca falla.',
     image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+      {
+        id: 'cerveza',
+        name: 'Cerveza',
+        values: [
+          { id: 'rubia', name: 'Cerveza Rubia', price: 8000 },
+          { id: 'negra', name: 'Cerveza Negra', price: 8000 },
+          { id: 'ipa', name: 'IPA', price: 10000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pizza-4',
     name: 'Pizza Vegetariana',
-    price: 1100,
+    price: 11000,
     restaurant: 'Veggie Pizza',
     deliveryTime: '25-35 min',
     category: 'pizzas',
     rating: 4.6,
     description: 'Salsa de tomate, muzzarella, morrones asados, cebolla, champiñones, aceitunas y rúcula fresca. Opción veggie sin renunciar al sabor.',
     image: 'https://images.unsplash.com/photo-1511689660979-10d2b1aada49?w=800&h=600&fit=crop',
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+      {
+        id: 'cerveza',
+        name: 'Cerveza',
+        values: [
+          { id: 'rubia', name: 'Cerveza Rubia', price: 8000 },
+          { id: 'negra', name: 'Cerveza Negra', price: 8000 },
+          { id: 'ipa', name: 'IPA', price: 10000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pizza-5',
     name: 'Pizza Pepperoni XL',
-    price: 1350,
+    price: 13500,
     restaurant: 'Don Antonio',
     deliveryTime: '25-35 min',
     category: 'pizzas',
@@ -383,7 +804,39 @@ export const pizzasItems: FoodItem[] = [
     image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 25,
-    originalPrice: 1800,
+    originalPrice: 18000,
+    extras: [
+      { id: 'queso_extra', name: 'Queso extra', price: 4000 },
+      { id: 'aceitunas', name: 'Aceitunas', price: 3000 },
+    ],
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+      {
+        id: 'cerveza',
+        name: 'Cerveza',
+        values: [
+          { id: 'rubia', name: 'Cerveza Rubia', price: 8000 },
+          { id: 'negra', name: 'Cerveza Negra', price: 8000 },
+          { id: 'ipa', name: 'IPA', price: 10000 },
+        ],
+      },
+    ],
   },
 ];
 
@@ -394,57 +847,152 @@ export const pastasItems: FoodItem[] = [
   {
     id: 'pasta-1',
     name: 'Spaghetti con Langostinos',
-    price: 1280,
+    price: 12800,
     restaurant: 'Pasta Bella',
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.8,
     description: 'Spaghetti al dente con langostinos frescos salteados, ajo, perejil, chile y aceite de oliva. Toque de limón y queso parmesano. Fresco y delicioso.',
     image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pasta-2',
     name: 'Spaghetti Bolognesa',
-    price: 890,
+    price: 8900,
     restaurant: 'Trattoria Italiana',
     deliveryTime: '20-30 min',
     category: 'pastas',
     rating: 4.8,
     description: 'Spaghetti con salsa bolognesa de carne vacuna, tomate, zanahoria, apio y vino tinto. Receta tradicional italiana de cocción lenta.',
     image: 'https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pasta-3',
     name: 'Ravioles de Ricota',
-    price: 1080,
+    price: 10800,
     restaurant: 'Pasta Bella',
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.9,
     description: 'Ravioles caseros rellenos de ricota y espinaca, con salsa de tomate fresco y albahaca. Espolvoreados con queso rallado. Pasta artesanal.',
     image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pasta-4',
     name: 'Lasagna Clásica',
-    price: 1150,
+    price: 11500,
     restaurant: 'Trattoria Italiana',
     deliveryTime: '30-40 min',
     category: 'pastas',
     rating: 4.8,
     description: 'Capas de pasta con salsa bolognesa, bechamel y muzzarella, gratinada al horno. Porción generosa, perfecta para compartir o disfrutar solo.',
     image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
   {
     id: 'pasta-5',
     name: 'Pasta Carbonara',
-    price: 980,
+    price: 9800,
     restaurant: 'Pasta Bella',
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.7,
     description: 'Spaghetti con panceta crocante, yema de huevo, queso parmesano y pimienta negra. Cremosa sin usar crema. Receta romana auténtica.',
     image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&h=600&fit=crop',
+    selectOptions: [
+      {
+        id: 'gaseosa',
+        name: 'Gaseosa',
+        values: [
+          { id: 'coca', name: 'Coca-Cola', price: 6000 },
+          { id: 'fanta', name: 'Fanta', price: 6000 },
+          { id: 'sprite', name: 'Sprite', price: 6000 },
+        ],
+      },
+      {
+        id: 'vino',
+        name: 'Vino',
+        values: [
+          { id: 'blanco', name: 'Vino Blanco', price: 12000 },
+          { id: 'tinto', name: 'Vino Tinto', price: 12000 },
+        ],
+      },
+    ],
   },
 ];
 
