@@ -13,6 +13,7 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.8,
     description: 'Nuestra burger clásica con carne 100% vacuna, queso cheddar, lechuga, tomate y cebolla caramelizada. Incluye porción de papas fritas crujientes.',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 20,
     originalPrice: 1112,
@@ -26,6 +27,7 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.9,
     description: 'Selección de 24 piezas de sushi premium: California rolls, Philadelphia rolls, rolls de salmón y atún, más nigiri variado. Incluye salsa de soja, wasabi y jengibre.',
+    image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop',
   },
   {
     id: 'pop-3',
@@ -36,6 +38,7 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.7,
     description: 'Pizza familiar con salsa de tomate casera y abundante muzzarella de primera calidad. Masa artesanal de 48hs de fermentación. Ideal para compartir.',
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 15,
     originalPrice: 1412,
@@ -49,6 +52,7 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.9,
     description: 'Pescado fresco del día marinado en limón, con cebolla morada, cilantro, ají limo y camote. Acompañado de choclo y cancha. Receta tradicional peruana.',
+    image: 'https://images.unsplash.com/photo-1641447485647-8ab47af423ee?w=800&h=600&fit=crop',
   },
   {
     id: 'pop-5',
@@ -59,6 +63,7 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.6,
     description: 'Tacos con carne de cerdo marinada al estilo tradicional mexicano, piña asada, cebolla, cilantro y salsa verde. Tortillas de maíz hechas a mano.',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop',
   },
 ];
 
@@ -75,6 +80,7 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.8,
     description: 'Hamburguesa gourmet con doble carne, bacon ahumado crujiente, queso cheddar fundido, cebolla caramelizada y salsa BBQ especial. Incluye papas rústicas.',
+    image: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=800&h=600&fit=crop',
   },
   {
     id: 'burg-2',
@@ -85,6 +91,7 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.5,
     description: 'Dos medallones de carne flame-grilled, doble queso cheddar, pepinillos, ketchup y mostaza en pan de sésamo XL. Para los amantes del queso.',
+    image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 30,
     originalPrice: 1571,
@@ -98,6 +105,7 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.6,
     description: 'Suprema de pollo crocante empanada, lechuga fresca, tomate, mayonesa casera y queso. Perfecta para los que prefieren pollo.',
+    image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&h=600&fit=crop',
   },
   {
     id: 'burg-4',
@@ -108,6 +116,7 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.7,
     description: 'Medallón 100% vegetal a base de hongos portobello, quinoa y legumbres. Con queso vegano, rúcula y tomates secos. Opción saludable y deliciosa.',
+    image: 'https://images.unsplash.com/photo-1585238341710-4a8e37674134?w=800&h=600&fit=crop',
   },
   {
     id: 'burg-5',
@@ -118,6 +127,7 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.9,
     description: 'Para los más hambrientos: tres medallones de carne premium, triple queso, bacon, cebolla crispy y salsa secreta. Un verdadero desafío. Incluye papas XXL.',
+    image: 'https://images.unsplash.com/photo-1603064752734-4c48eff53d05?w=800&h=600&fit=crop',
   },
 ];
 
@@ -134,6 +144,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.9,
     description: 'Combo premium de 30 piezas: California, Philadelphia, rolls de salmón, atún y langostinos, más sashimi y nigiri variado. El combo más completo.',
+    image: 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=800&h=600&fit=crop',
   },
   {
     id: 'sush-2',
@@ -144,6 +155,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.7,
     description: 'Clásicos rolls California con cangrejo, palta, pepino y sésamo. 10 piezas. Fresco y delicioso, perfecto para iniciarse en el sushi.',
+    image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 25,
     originalPrice: 1187,
@@ -157,6 +169,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.8,
     description: 'Láminas de salmón rosado premium sin arroz. 12 cortes perfectos. Para los puristas que aprecian el sabor del pescado fresco.',
+    image: 'https://images.unsplash.com/photo-1583623025817-d180a2221d0a?w=800&h=600&fit=crop',
   },
   {
     id: 'sush-4',
@@ -167,6 +180,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.6,
     description: 'Rolls con langostinos en tempura crujiente, queso crema, palta y salsa teriyaki. Contraste perfecto entre textura crocante y cremosa.',
+    image: 'https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=800&h=600&fit=crop',
   },
   {
     id: 'sush-5',
@@ -177,6 +191,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.8,
     description: 'Bowl hawaiano con arroz de sushi, cubos de salmón fresco, edamame, palta, alga wakame, sésamo y salsa ponzu. Fresco y nutritivo.',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop',
   },
 ];
 
@@ -193,6 +208,7 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.9,
     description: 'Tiras de lomo salteado al wok con cebolla, tomate, ají amarillo y sillao. Acompañado de papas fritas y arroz blanco. Plato emblema de la cocina peruana.',
+    image: 'https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=800&h=600&fit=crop',
   },
   {
     id: 'peru-2',
@@ -203,6 +219,7 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.8,
     description: 'Pescado, pulpo, calamares y langostinos marinados en limón con rocoto, cebolla morada y cilantro. Acompañado de camote, choclo y cancha.',
+    image: 'https://images.unsplash.com/photo-1641447485647-8ab47af423ee?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 20,
     originalPrice: 1312,
@@ -216,6 +233,7 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.7,
     description: 'Pollo deshilachado en crema de ají amarillo, nueces y queso parmesano. Servido con papas doradas, aceitunas y huevo. Comfort food peruano.',
+    image: 'https://images.unsplash.com/photo-1604909052743-94e838986d24?w=800&h=600&fit=crop',
   },
   {
     id: 'peru-4',
@@ -226,6 +244,7 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.8,
     description: 'Arroz cremoso con calamares, langostinos, mejillones y pulpo, cocido en salsa de ají panca y vino blanco. Generosa porción marina.',
+    image: 'https://images.unsplash.com/photo-1615870123253-cea95a52d0e5?w=800&h=600&fit=crop',
   },
   {
     id: 'peru-5',
@@ -236,6 +255,7 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.6,
     description: 'Pastel frío de papa amarilla con limón y ají, relleno de pollo con mayonesa. Decorado con huevo, aceitunas y palta. Entrada tradicional.',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=600&fit=crop',
   },
 ];
 
@@ -252,6 +272,7 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.8,
     description: 'Bowl completo con quinoa, garbanzos especiados, hummus, vegetales asados, palta, semillas y tahini. 100% plant-based y nutritivo.',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 15,
     originalPrice: 1082,
@@ -265,6 +286,7 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.7,
     description: 'Lechuga romana, croutons caseros, queso parmesano vegano y aderezo César sin huevo. Fresca, crujiente y deliciosa.',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop',
   },
   {
     id: 'veg-3',
@@ -275,6 +297,7 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.6,
     description: 'Tortilla integral con falafel de garbanzos crocantes, hummus, tabule, pepino, tomate y salsa de yogur vegano. Sabor mediterráneo.',
+    image: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&h=600&fit=crop',
   },
   {
     id: 'veg-4',
@@ -285,6 +308,7 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.7,
     description: 'Capas de pasta con berenjenas, zucchini, espinaca, ricota vegetal y salsa de tomate casera. Gratinada al horno con queso vegano.',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
   },
   {
     id: 'veg-5',
@@ -295,6 +319,7 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.8,
     description: 'Quinoa orgánica, kale, remolacha asada, zanahoria, garbanzos, almendras y vinagreta de mostaza. Súper nutritivo y energizante.',
+    image: 'https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=800&h=600&fit=crop',
   },
 ];
 
@@ -311,6 +336,7 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.8,
     description: 'Pizza clásica con salsa de tomate, muzzarella, tomates frescos, ajo y albahaca. Masa artesanal a la piedra. Tradición italiana auténtica.',
+    image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&h=600&fit=crop',
   },
   {
     id: 'pizza-2',
@@ -321,6 +347,7 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.7,
     description: 'Blend de muzzarella, provolone, fontina y gorgonzola sobre salsa blanca. Para los verdaderos amantes del queso. Cremosa y deliciosa.',
+    image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=800&h=600&fit=crop',
   },
   {
     id: 'pizza-3',
@@ -331,6 +358,7 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.8,
     description: 'Muzzarella, rodajas de salame calabrés, aceitunas negras y orégano. Borde relleno disponible. Clásico que nunca falla.',
+    image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=600&fit=crop',
   },
   {
     id: 'pizza-4',
@@ -341,6 +369,7 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.6,
     description: 'Salsa de tomate, muzzarella, morrones asados, cebolla, champiñones, aceitunas y rúcula fresca. Opción veggie sin renunciar al sabor.',
+    image: 'https://images.unsplash.com/photo-1511689660979-10d2b1aada49?w=800&h=600&fit=crop',
   },
   {
     id: 'pizza-5',
@@ -351,6 +380,7 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.9,
     description: 'Pizza extra grande con triple muzzarella y abundante pepperoni. Perfecta para compartir o para los muy hambrientos. 8 porciones generosas.',
+    image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=600&fit=crop',
     isOffer: true,
     discountPercentage: 25,
     originalPrice: 1800,
@@ -370,6 +400,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.7,
     description: 'Fetuccini en cremosa salsa Alfredo con queso parmesano, manteca y un toque de nuez moscada. Incluye pan de ajo. Clásico irresistible.',
+    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-2',
@@ -380,6 +411,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.8,
     description: 'Spaghetti con salsa bolognesa de carne vacuna, tomate, zanahoria, apio y vino tinto. Receta tradicional italiana de cocción lenta.',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-3',
@@ -390,9 +422,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.9,
     description: 'Ravioles caseros rellenos de ricota y espinaca, con salsa de tomate fresco y albahaca. Espolvoreados con queso rallado. Pasta artesanal.',
-    isOffer: true,
-    discountPercentage: 20,
-    originalPrice: 1350,
+    image: 'https://images.unsplash.com/photo-1587740908075-9ea5f1169b10?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-4',
@@ -403,6 +433,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.8,
     description: 'Capas de pasta con salsa bolognesa, bechamel y muzzarella, gratinada al horno. Porción generosa, perfecta para compartir o disfrutar solo.',
+    image: 'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-5',
@@ -413,6 +444,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.7,
     description: 'Spaghetti con panceta crocante, yema de huevo, queso parmesano y pimienta negra. Cremosa sin usar crema. Receta romana auténtica.',
+    image: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&h=600&fit=crop',
   },
 ];
 

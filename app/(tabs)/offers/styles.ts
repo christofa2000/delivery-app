@@ -8,18 +8,30 @@ export const styles = StyleSheet.create({
   },
   header: {
     padding: spacing.xl,
-    backgroundColor: colors.backgroundSoft,
+    backgroundColor: colors.card,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
+    ...shadows.card,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: spacing.lg,
+  },
+  headerIcon: {
+    color: colors.primary,
+    marginRight: spacing.md,
+  },
+  headerTextContainer: {
+    flex: 1,
   },
   title: {
     ...typography.h2,
-    marginBottom: spacing.sm,
+    marginBottom: spacing.xs,
   },
   subtitle: {
     fontSize: 16,
     color: colors.textSecondary,
-    marginBottom: spacing.lg,
   },
   offerBadge: {
     flexDirection: 'row',
@@ -30,6 +42,9 @@ export const styles = StyleSheet.create({
     borderRadius: radii.pill,
     alignSelf: 'flex-start',
     ...shadows.card,
+  },
+  offerBadgeIcon: {
+    color: colors.primary,
   },
   offerBadgeText: {
     color: colors.primary,
@@ -54,6 +69,9 @@ export const styles = StyleSheet.create({
     padding: spacing.xxl,
     backgroundColor: colors.backgroundSoft,
   },
+  emptyIcon: {
+    color: colors.primary,
+  },
   emptyTitle: {
     ...typography.h2,
     marginTop: spacing.xl,
@@ -64,5 +82,6 @@ export const styles = StyleSheet.create({
     color: colors.textSecondary,
     textAlign: 'center',
     lineHeight: 24,
+    maxWidth: 300,
   },
 });

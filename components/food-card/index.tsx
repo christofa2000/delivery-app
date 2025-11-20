@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { FoodCardProps } from './types';
@@ -26,8 +26,18 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={handleCardPress} activeOpacity={0.8}>
-      <View style={styles.imagePlaceholder}>
-        <Ionicons name="fast-food-outline" size={48} color="#bbb" />
+      <View style={styles.imageContainer}>
+        {item.image ? (
+          <Image 
+            source={{ uri: item.image }} 
+            style={styles.image}
+            resizeMode="cover"
+          />
+        ) : (
+          <View style={styles.imagePlaceholder}>
+            <Ionicons name="fast-food-outline" size={48} color="#bbb" />
+          </View>
+        )}
         
         {/* Badge de oferta */}
         {item.isOffer && item.discountPercentage && (

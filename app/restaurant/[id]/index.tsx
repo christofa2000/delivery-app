@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Alert, Image } from 'react-native';
 import { useLocalSearchParams, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { getFoodItemById } from '@/services/utils/get-food-item';
@@ -75,7 +75,17 @@ const RestaurantDetail: FC = () => {
       >
         {/* Imagen del producto */}
         <View style={styles.imageContainer}>
-          <Ionicons name="fast-food" size={120} color="#bbb" />
+          {foodItem.image ? (
+            <Image 
+              source={{ uri: foodItem.image }} 
+              style={styles.productImage}
+              resizeMode="cover"
+            />
+          ) : (
+            <View style={styles.imagePlaceholder}>
+              <Ionicons name="fast-food" size={120} color="#bbb" />
+            </View>
+          )}
           {foodItem.rating && (
             <View style={styles.ratingBadge}>
               <Ionicons name="star" size={18} color="#FFB800" />

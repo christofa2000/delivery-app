@@ -45,7 +45,7 @@ function SearchButton() {
       style={headerStyles.searchButton}
       activeOpacity={0.7}
     >
-      <Ionicons name="search" size={24} color={colors.textPrimary} />
+      <Ionicons name="search-outline" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
   );
 }
@@ -108,8 +108,8 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Inicio',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
-          headerTitle: 'Delivery App',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home-outline" color={color} />,
+          headerTitle: 'Demo de App de Comidas',
           headerRight: () => (
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <SearchButton />
@@ -122,7 +122,7 @@ export default function TabLayout() {
         name="offers"
         options={{
           title: 'Ofertas',
-          tabBarIcon: ({ color }) => <TabBarIcon name="pricetag" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="pricetags-outline" color={color} />,
           headerTitle: 'Ofertas',
         }}
       />
@@ -130,7 +130,7 @@ export default function TabLayout() {
         name="favorites"
         options={{
           title: 'Favoritos',
-          tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="heart-outline" color={color} />,
           headerTitle: 'Favoritos',
         }}
       />
@@ -138,7 +138,7 @@ export default function TabLayout() {
         name="account"
         options={{
           title: 'Cuenta',
-          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="person-outline" color={color} />,
           headerTitle: 'Mi Cuenta',
         }}
       />

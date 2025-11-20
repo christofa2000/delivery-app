@@ -12,6 +12,15 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     ...shadows.card,
   },
+  imageContainer: {
+    width: '100%',
+    height: 130,
+    position: 'relative',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
   imagePlaceholder: {
     width: '100%',
     height: 130,

@@ -50,20 +50,36 @@ const Account: FC = () => {
     return (
       <View style={styles.container}>
         <View style={styles.iconContainer}>
-          <Ionicons name="person-circle-outline" size={100} color="#e91e63" />
+          <Ionicons name="person-circle-outline" size={100} color={styles.icon.color} />
         </View>
 
         <Text style={styles.title}>Bienvenido</Text>
         <Text style={styles.subtitle}>
-          Iniciá sesión para ver tus datos y tus pedidos
+          Iniciá sesión para acceder a tu cuenta y realizar pedidos
         </Text>
 
+        <View style={styles.benefitsContainer}>
+          <View style={styles.benefitItem}>
+            <Ionicons name="receipt-outline" size={24} color={styles.benefitIcon.color} />
+            <Text style={styles.benefitText}>Historial de pedidos</Text>
+          </View>
+          <View style={styles.benefitItem}>
+            <Ionicons name="heart-outline" size={24} color={styles.benefitIcon.color} />
+            <Text style={styles.benefitText}>Favoritos guardados</Text>
+          </View>
+          <View style={styles.benefitItem}>
+            <Ionicons name="flash-outline" size={24} color={styles.benefitIcon.color} />
+            <Text style={styles.benefitText}>Checkout rápido</Text>
+          </View>
+        </View>
+
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin} activeOpacity={0.8}>
-          <Ionicons name="log-in-outline" size={20} color="#fff" />
+          <Ionicons name="log-in-outline" size={20} color={styles.loginButtonIcon.color} />
           <Text style={styles.loginButtonText}>Iniciar sesión</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.registerButton} onPress={handleLogin} activeOpacity={0.8}>
+          <Ionicons name="person-add-outline" size={20} color={styles.registerButtonIcon.color} />
           <Text style={styles.registerButtonText}>Crear cuenta nueva</Text>
         </TouchableOpacity>
       </View>
@@ -76,7 +92,7 @@ const Account: FC = () => {
       {/* Header con info del usuario */}
       <View style={styles.userHeader}>
         <View style={styles.userIconContainer}>
-          <Ionicons name="person-circle" size={80} color="#e91e63" />
+          <Ionicons name="person-circle" size={80} color={styles.userIcon.color} />
         </View>
         <Text style={styles.userName}>{user.name}</Text>
         <Text style={styles.userEmail}>{user.email}</Text>
@@ -90,10 +106,10 @@ const Account: FC = () => {
           activeOpacity={0.7}
         >
           <View style={styles.optionIconContainer}>
-            <Ionicons name="receipt-outline" size={24} color="#e91e63" />
+            <Ionicons name="receipt-outline" size={24} color={styles.optionIcon.color} />
           </View>
           <Text style={styles.optionText}>Mis pedidos</Text>
-          <Ionicons name="chevron-forward" size={20} color="#999" />
+          <Ionicons name="chevron-forward-outline" size={20} color={styles.chevronIcon.color} />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -102,10 +118,10 @@ const Account: FC = () => {
           activeOpacity={0.7}
         >
           <View style={styles.optionIconContainer}>
-            <Ionicons name="location-outline" size={24} color="#e91e63" />
+            <Ionicons name="location-outline" size={24} color={styles.optionIcon.color} />
           </View>
           <Text style={styles.optionText}>Mis direcciones</Text>
-          <Ionicons name="chevron-forward" size={20} color="#999" />
+          <Ionicons name="chevron-forward-outline" size={20} color={styles.chevronIcon.color} />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -114,10 +130,10 @@ const Account: FC = () => {
           activeOpacity={0.7}
         >
           <View style={styles.optionIconContainer}>
-            <Ionicons name="card-outline" size={24} color="#e91e63" />
+            <Ionicons name="card-outline" size={24} color={styles.optionIcon.color} />
           </View>
           <Text style={styles.optionText}>Métodos de pago</Text>
-          <Ionicons name="chevron-forward" size={20} color="#999" />
+          <Ionicons name="chevron-forward-outline" size={20} color={styles.chevronIcon.color} />
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -126,10 +142,10 @@ const Account: FC = () => {
           activeOpacity={0.7}
         >
           <View style={styles.optionIconContainer}>
-            <Ionicons name="settings-outline" size={24} color="#e91e63" />
+            <Ionicons name="settings-outline" size={24} color={styles.optionIcon.color} />
           </View>
           <Text style={styles.optionText}>Configuración</Text>
-          <Ionicons name="chevron-forward" size={20} color="#999" />
+          <Ionicons name="chevron-forward-outline" size={20} color={styles.chevronIcon.color} />
         </TouchableOpacity>
       </View>
 
@@ -139,7 +155,7 @@ const Account: FC = () => {
         onPress={handleLogout}
         activeOpacity={0.8}
       >
-        <Ionicons name="log-out-outline" size={20} color="#d32f2f" />
+        <Ionicons name="log-out-outline" size={20} color={styles.logoutButtonIcon.color} />
         <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
       </TouchableOpacity>
     </ScrollView>

@@ -19,6 +19,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
+  productImage: {
+    width: '100%',
+    height: '100%',
+  },
+  imagePlaceholder: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
   ratingBadge: {
     position: 'absolute',
     top: 16,

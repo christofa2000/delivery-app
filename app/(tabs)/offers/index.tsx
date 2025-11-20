@@ -40,10 +40,10 @@ const Offers: FC = () => {
   if (offerItems.length === 0) {
     return (
       <View style={styles.emptyContainer}>
-        <Ionicons name="pricetag-outline" size={80} color="#ddd" />
-        <Text style={styles.emptyTitle}>Sin ofertas por ahora</Text>
+        <Ionicons name="pricetags-outline" size={100} color={styles.emptyIcon.color} />
+        <Text style={styles.emptyTitle}>Sin ofertas disponibles</Text>
         <Text style={styles.emptySubtitle}>
-          Hoy no hay ofertas, pero pronto volverán 😄
+          No hay ofertas por el momento, pero pronto volverán con increíbles descuentos 🎉
         </Text>
       </View>
     );
@@ -53,11 +53,16 @@ const Offers: FC = () => {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Text style={styles.title}>Ofertas especiales</Text>
-        <Text style={styles.subtitle}>Aprovechá los descuentos de hoy</Text>
+        <View style={styles.headerContent}>
+          <Ionicons name="pricetags" size={32} color={styles.headerIcon.color} style={styles.headerIcon} />
+          <View style={styles.headerTextContainer}>
+            <Text style={styles.title}>Ofertas especiales</Text>
+            <Text style={styles.subtitle}>Aprovechá los mejores descuentos</Text>
+          </View>
+        </View>
         <View style={styles.offerBadge}>
-          <Ionicons name="flame" size={18} color="#fff" />
-          <Text style={styles.offerBadgeText}>{offerItems.length} ofertas disponibles</Text>
+          <Ionicons name="flame" size={18} color={styles.offerBadgeIcon.color} />
+          <Text style={styles.offerBadgeText}>{offerItems.length} ofertas activas</Text>
         </View>
       </View>
 
