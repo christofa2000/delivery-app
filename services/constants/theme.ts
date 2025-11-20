@@ -10,6 +10,8 @@ export const colors = {
   backgroundSoft: '#F5F7FB', // fondos de pantalla suaves
   card: '#FFFFFF',           // fondo de cards
   border: '#E0E4F0',         // bordes suaves
+  header: '#EFF4FF',         // azul suave para headers
+  footer: '#EFF4FF',        // azul suave para footer/tab bar
   textPrimary: '#1E1E1E',
   textSecondary: '#6B7280',
   muted: '#9CA3AF',
@@ -60,31 +62,54 @@ export const shadows = {
   },
 };
 
+/**
+ * Tipografía recomendada: Inter
+ * Fuente moderna y legible, optimizada para interfaces digitales
+ */
 export const typography = {
   h1: {
     fontSize: 28,
     fontWeight: '700' as const,
+    fontFamily: 'Inter_700Bold',
     color: colors.textPrimary,
   },
   h2: {
     fontSize: 22,
     fontWeight: '700' as const,
+    fontFamily: 'Inter_700Bold',
     color: colors.textPrimary,
   },
   h3: {
     fontSize: 20,
     fontWeight: '600' as const,
+    fontFamily: 'Inter_600SemiBold',
     color: colors.textPrimary,
   },
   body: {
     fontSize: 16,
     fontWeight: '400' as const,
+    fontFamily: 'Inter_400Regular',
     color: colors.textPrimary,
   },
   caption: {
     fontSize: 14,
     fontWeight: '400' as const,
+    fontFamily: 'Inter_400Regular',
     color: colors.textSecondary,
   },
+  // Variantes adicionales de Inter
+  medium: {
+    fontSize: 16,
+    fontWeight: '500' as const,
+    fontFamily: 'Inter_500Medium',
+    color: colors.textPrimary,
+  },
+  semibold: {
+    fontSize: 16,
+    fontWeight: '600' as const,
+    fontFamily: 'Inter_600SemiBold',
+    color: colors.textPrimary,
+  },
 };
+
 

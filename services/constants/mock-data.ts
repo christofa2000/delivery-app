@@ -169,7 +169,7 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.8,
     description: 'Láminas de salmón rosado premium sin arroz. 12 cortes perfectos. Para los puristas que aprecian el sabor del pescado fresco.',
-    image: 'https://images.unsplash.com/photo-1583623025817-d180a2221d0a?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800&h=600&fit=crop',
   },
   {
     id: 'sush-4',
@@ -393,14 +393,14 @@ export const pizzasItems: FoodItem[] = [
 export const pastasItems: FoodItem[] = [
   {
     id: 'pasta-1',
-    name: 'Fetuccini Alfredo',
-    price: 950,
+    name: 'Spaghetti con Langostinos',
+    price: 1280,
     restaurant: 'Pasta Bella',
     deliveryTime: '25-35 min',
     category: 'pastas',
-    rating: 4.7,
-    description: 'Fetuccini en cremosa salsa Alfredo con queso parmesano, manteca y un toque de nuez moscada. Incluye pan de ajo. Clásico irresistible.',
-    image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=800&h=600&fit=crop',
+    rating: 4.8,
+    description: 'Spaghetti al dente con langostinos frescos salteados, ajo, perejil, chile y aceite de oliva. Toque de limón y queso parmesano. Fresco y delicioso.',
+    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-2',
@@ -411,7 +411,7 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.8,
     description: 'Spaghetti con salsa bolognesa de carne vacuna, tomate, zanahoria, apio y vino tinto. Receta tradicional italiana de cocción lenta.',
-    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1598866594230-a7c12756260f?w=800&h=600&fit=crop',
   },
   {
     id: 'pasta-3',

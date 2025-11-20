@@ -17,6 +17,11 @@ function TabBarIcon(props: {
   return <Ionicons size={24} style={{ marginBottom: -3 }} {...props} />;
 }
 
+// Componente personalizado para los labels de la tab bar
+function TabBarLabel({ label }: { label: string }) {
+  return <Text style={{ fontSize: 12, fontWeight: '500' }}>{label}</Text>;
+}
+
 // Botón del carrito con badge
 function CartButton() {
   const totalItems = useCartStore((state) => state.getTotalItems());
@@ -82,27 +87,50 @@ export default function TabLayout() {
 
   return (
     <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.muted,
-        tabBarStyle: {
-          backgroundColor: colors.background,
-          borderTopWidth: 1,
-          borderTopColor: colors.border,
-          height: 60,
-          paddingBottom: spacing.sm,
-          paddingTop: spacing.sm,
-        },
-        headerStyle: {
-          backgroundColor: colors.background,
-          borderBottomWidth: 1,
-          borderBottomColor: colors.border,
-        },
-        headerTitleStyle: {
-          color: colors.textPrimary,
-          fontWeight: '600',
-        },
-        headerShown: useClientOnlyValue(false, true),
+      screenOptions={({ route }) => {
+        // Mapear nombres de ruta a títulos en castellano para tab bar y headers
+        const titleMap: Record<string, string> = {
+          'offers': 'Ofertas',
+          'offers/index': 'Ofertas',
+          'favorites': 'Favoritos',
+          'favorites/index': 'Favoritos',
+          'account': 'Cuenta',
+          'account/index': 'Cuenta',
+          'index': 'Inicio',
+        };
+
+        // Obtener el nombre de la ruta (puede ser "offers" o "offers/index")
+        const routeName = route.name;
+        // Limpiar el nombre si contiene "/index"
+        const cleanRouteName = routeName.replace('/index', '');
+        const title = titleMap[routeName] || titleMap[cleanRouteName] || routeName;
+
+        return {
+          tabBarActiveTintColor: colors.primary,
+          tabBarInactiveTintColor: colors.muted,
+          tabBarStyle: {
+            backgroundColor: colors.footer,
+            borderTopWidth: 1,
+            borderTopColor: colors.border,
+            height: 60,
+            paddingBottom: spacing.sm,
+            paddingTop: spacing.sm,
+          },
+          headerStyle: {
+            backgroundColor: colors.header,
+            borderBottomWidth: 1,
+            borderBottomColor: colors.border,
+          },
+          headerTitleStyle: {
+            color: colors.textPrimary,
+            fontWeight: '600',
+          },
+          headerTintColor: colors.textPrimary,
+          headerShown: useClientOnlyValue(false, true),
+          // Establecer título por defecto (será sobrescrito por headerTitle en options individuales)
+          title: title,
+          headerTitle: title,
+        };
       }}>
       <Tabs.Screen
         name="index"
@@ -122,6 +150,7 @@ export default function TabLayout() {
         name="offers"
         options={{
           title: 'Ofertas',
+          tabBarLabel: (props) => <TabBarLabel label="Ofertas" />,
           tabBarIcon: ({ color }) => <TabBarIcon name="pricetags-outline" color={color} />,
           headerTitle: 'Ofertas',
         }}
@@ -130,6 +159,7 @@ export default function TabLayout() {
         name="favorites"
         options={{
           title: 'Favoritos',
+          tabBarLabel: (props) => <TabBarLabel label="Favoritos" />,
           tabBarIcon: ({ color }) => <TabBarIcon name="heart-outline" color={color} />,
           headerTitle: 'Favoritos',
         }}
@@ -138,8 +168,9 @@ export default function TabLayout() {
         name="account"
         options={{
           title: 'Cuenta',
+          tabBarLabel: (props) => <TabBarLabel label="Cuenta" />,
           tabBarIcon: ({ color }) => <TabBarIcon name="person-outline" color={color} />,
-          headerTitle: 'Mi Cuenta',
+          headerTitle: 'Cuenta',
         }}
       />
     </Tabs>

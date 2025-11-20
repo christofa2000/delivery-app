@@ -284,3 +284,4 @@ Este es un proyecto de demostración. Para mejoras o sugerencias, abre un issue.
   <p>Hecho con ❤️ usando React Native + Expo</p>
 </div>
 
+

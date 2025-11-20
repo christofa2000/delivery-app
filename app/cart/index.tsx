@@ -23,18 +23,52 @@ const Cart: FC = () => {
   const total = subtotal + DELIVERY_COST;
 
   const handleClearCart = () => {
-    Alert.alert(
-      'Vaciar carrito',
-      '¿Estás seguro que querés vaciar el carrito?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Vaciar',
-          style: 'destructive',
-          onPress: () => clearCart(),
-        },
-      ]
-    );
+    console.log('🔴 [DEBUG] handleClearCart llamado');
+    console.log('🔴 [DEBUG] Items actuales:', items.length);
+    console.log('🔴 [DEBUG] clearCart función:', typeof clearCart);
+    
+    // Detectar si estamos en web
+    const isWeb = typeof window !== 'undefined' && window.confirm;
+    
+    if (isWeb) {
+      // Usar window.confirm para web (más confiable)
+      const confirmed = window.confirm('¿Estás seguro que querés eliminar todos los productos del carrito?');
+      console.log('🔴 [DEBUG] Usuario confirmó:', confirmed);
+      
+      if (confirmed) {
+        console.log('🔴 [DEBUG] Ejecutando clearCart()...');
+        try {
+          clearCart();
+          console.log('🔴 [DEBUG] clearCart() ejecutado exitosamente');
+          // Pequeño delay para que el estado se actualice
+          setTimeout(() => {
+            console.log('🔴 [DEBUG] Items después de clearCart:', items.length);
+            alert('¡Listo! El carrito se vació correctamente');
+          }, 100);
+        } catch (error) {
+          console.error('❌ [ERROR] Error al ejecutar clearCart:', error);
+          alert('Error al vaciar el carrito. Por favor, intentá de nuevo.');
+        }
+      }
+    } else {
+      // Para mobile, usar Alert nativo
+      Alert.alert(
+        'Vaciar carrito',
+        '¿Estás seguro que querés eliminar todos los productos del carrito?',
+        [
+          { text: 'Cancelar', style: 'cancel' },
+          {
+            text: 'Vaciar',
+            style: 'destructive',
+            onPress: () => {
+              console.log('🔴 [DEBUG] Ejecutando clearCart() desde Alert...');
+              clearCart();
+              Alert.alert('¡Listo!', 'El carrito se vació correctamente');
+            },
+          },
+        ]
+      );
+    }
   };
 
   const handleCheckout = () => {
@@ -158,7 +192,10 @@ const Cart: FC = () => {
 
         <TouchableOpacity
           style={styles.clearButton}
-          onPress={handleClearCart}
+          onPress={() => {
+            console.log('🔴 Botón "Vaciar carrito" presionado');
+            handleClearCart();
+          }}
           activeOpacity={0.8}
         >
           <Text style={styles.clearButtonText}>Vaciar carrito</Text>

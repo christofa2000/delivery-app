@@ -116,3 +116,4 @@ assets/images/food/
 2. Actualizá el campo `image` en `mock-data.ts`
 3. Listo! 🎉
 
+

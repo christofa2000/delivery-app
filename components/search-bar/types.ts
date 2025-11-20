@@ -6,3 +6,4 @@ export interface SearchBarProps {
   onBlur?: () => void;
 }
 
+

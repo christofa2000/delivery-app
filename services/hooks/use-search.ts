@@ -52,3 +52,4 @@ export const useSearch = (query: string, selectedCategory?: FoodCategory | 'all'
   };
 };
 
+

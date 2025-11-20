@@ -78,8 +78,12 @@ export const useCartStore = create<CartStore>((set, get) => ({
    * Vaciar el carrito completamente
    */
   clearCart: () => {
-    set({ items: [] });
-    saveCartToStorage([]);
+    console.log('🗑️ clearCart() llamado - items ANTES:', get().items.length);
+    const emptyItems: CartItem[] = [];
+    set({ items: emptyItems });
+    saveCartToStorage(emptyItems);
+    console.log('✅ clearCart() ejecutado - items DESPUÉS:', get().items.length);
+    console.log('✅ Carrito vaciado correctamente');
   },
 
   /**
