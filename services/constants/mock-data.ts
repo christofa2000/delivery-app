@@ -12,6 +12,7 @@ export const popularItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'popular',
     rating: 4.8,
+    description: 'Nuestra burger clásica con carne 100% vacuna, queso cheddar, lechuga, tomate y cebolla caramelizada. Incluye porción de papas fritas crujientes.',
   },
   {
     id: 'pop-2',
@@ -21,6 +22,7 @@ export const popularItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'popular',
     rating: 4.9,
+    description: 'Selección de 24 piezas de sushi premium: California rolls, Philadelphia rolls, rolls de salmón y atún, más nigiri variado. Incluye salsa de soja, wasabi y jengibre.',
   },
   {
     id: 'pop-3',
@@ -30,6 +32,7 @@ export const popularItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'popular',
     rating: 4.7,
+    description: 'Pizza familiar con salsa de tomate casera y abundante muzzarella de primera calidad. Masa artesanal de 48hs de fermentación. Ideal para compartir.',
   },
   {
     id: 'pop-4',
@@ -39,6 +42,7 @@ export const popularItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'popular',
     rating: 4.9,
+    description: 'Pescado fresco del día marinado en limón, con cebolla morada, cilantro, ají limo y camote. Acompañado de choclo y cancha. Receta tradicional peruana.',
   },
   {
     id: 'pop-5',
@@ -48,6 +52,7 @@ export const popularItems: FoodItem[] = [
     deliveryTime: '15-25 min',
     category: 'popular',
     rating: 4.6,
+    description: 'Tacos con carne de cerdo marinada al estilo tradicional mexicano, piña asada, cebolla, cilantro y salsa verde. Tortillas de maíz hechas a mano.',
   },
 ];
 
@@ -63,6 +68,7 @@ export const burgersItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'hamburguesas',
     rating: 4.8,
+    description: 'Hamburguesa gourmet con doble carne, bacon ahumado crujiente, queso cheddar fundido, cebolla caramelizada y salsa BBQ especial. Incluye papas rústicas.',
   },
   {
     id: 'burg-2',
@@ -72,6 +78,7 @@ export const burgersItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'hamburguesas',
     rating: 4.5,
+    description: 'Dos medallones de carne flame-grilled, doble queso cheddar, pepinillos, ketchup y mostaza en pan de sésamo XL. Para los amantes del queso.',
   },
   {
     id: 'burg-3',
@@ -81,6 +88,7 @@ export const burgersItems: FoodItem[] = [
     deliveryTime: '25-30 min',
     category: 'hamburguesas',
     rating: 4.6,
+    description: 'Suprema de pollo crocante empanada, lechuga fresca, tomate, mayonesa casera y queso. Perfecta para los que prefieren pollo.',
   },
   {
     id: 'burg-4',
@@ -90,6 +98,7 @@ export const burgersItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'hamburguesas',
     rating: 4.7,
+    description: 'Medallón 100% vegetal a base de hongos portobello, quinoa y legumbres. Con queso vegano, rúcula y tomates secos. Opción saludable y deliciosa.',
   },
   {
     id: 'burg-5',
@@ -99,6 +108,7 @@ export const burgersItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'hamburguesas',
     rating: 4.9,
+    description: 'Para los más hambrientos: tres medallones de carne premium, triple queso, bacon, cebolla crispy y salsa secreta. Un verdadero desafío. Incluye papas XXL.',
   },
 ];
 
@@ -114,6 +124,7 @@ export const sushiItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'sushi',
     rating: 4.9,
+    description: 'Combo premium de 30 piezas: California, Philadelphia, rolls de salmón, atún y langostinos, más sashimi y nigiri variado. El combo más completo.',
   },
   {
     id: 'sush-2',
@@ -123,6 +134,7 @@ export const sushiItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'sushi',
     rating: 4.7,
+    description: 'Clásicos rolls California con cangrejo, palta, pepino y sésamo. 10 piezas. Fresco y delicioso, perfecto para iniciarse en el sushi.',
   },
   {
     id: 'sush-3',
@@ -132,6 +144,7 @@ export const sushiItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'sushi',
     rating: 4.8,
+    description: 'Láminas de salmón rosado premium sin arroz. 12 cortes perfectos. Para los puristas que aprecian el sabor del pescado fresco.',
   },
   {
     id: 'sush-4',
@@ -141,6 +154,7 @@ export const sushiItems: FoodItem[] = [
     deliveryTime: '35-45 min',
     category: 'sushi',
     rating: 4.6,
+    description: 'Rolls con langostinos en tempura crujiente, queso crema, palta y salsa teriyaki. Contraste perfecto entre textura crocante y cremosa.',
   },
   {
     id: 'sush-5',
@@ -150,6 +164,7 @@ export const sushiItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'sushi',
     rating: 4.8,
+    description: 'Bowl hawaiano con arroz de sushi, cubos de salmón fresco, edamame, palta, alga wakame, sésamo y salsa ponzu. Fresco y nutritivo.',
   },
 ];
 
@@ -165,6 +180,7 @@ export const peruanaItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'peruana',
     rating: 4.9,
+    description: 'Tiras de lomo salteado al wok con cebolla, tomate, ají amarillo y sillao. Acompañado de papas fritas y arroz blanco. Plato emblema de la cocina peruana.',
   },
   {
     id: 'peru-2',
@@ -174,6 +190,7 @@ export const peruanaItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'peruana',
     rating: 4.8,
+    description: 'Pescado, pulpo, calamares y langostinos marinados en limón con rocoto, cebolla morada y cilantro. Acompañado de camote, choclo y cancha.',
   },
   {
     id: 'peru-3',
@@ -183,6 +200,7 @@ export const peruanaItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'peruana',
     rating: 4.7,
+    description: 'Pollo deshilachado en crema de ají amarillo, nueces y queso parmesano. Servido con papas doradas, aceitunas y huevo. Comfort food peruano.',
   },
   {
     id: 'peru-4',
@@ -192,6 +210,7 @@ export const peruanaItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'peruana',
     rating: 4.8,
+    description: 'Arroz cremoso con calamares, langostinos, mejillones y pulpo, cocido en salsa de ají panca y vino blanco. Generosa porción marina.',
   },
   {
     id: 'peru-5',
@@ -201,6 +220,7 @@ export const peruanaItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'peruana',
     rating: 4.6,
+    description: 'Pastel frío de papa amarilla con limón y ají, relleno de pollo con mayonesa. Decorado con huevo, aceitunas y palta. Entrada tradicional.',
   },
 ];
 
@@ -216,6 +236,7 @@ export const vegetarianoItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'vegetariano',
     rating: 4.8,
+    description: 'Bowl completo con quinoa, garbanzos especiados, hummus, vegetales asados, palta, semillas y tahini. 100% plant-based y nutritivo.',
   },
   {
     id: 'veg-2',
@@ -225,6 +246,7 @@ export const vegetarianoItems: FoodItem[] = [
     deliveryTime: '15-25 min',
     category: 'vegetariano',
     rating: 4.7,
+    description: 'Lechuga romana, croutons caseros, queso parmesano vegano y aderezo César sin huevo. Fresca, crujiente y deliciosa.',
   },
   {
     id: 'veg-3',
@@ -234,6 +256,7 @@ export const vegetarianoItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'vegetariano',
     rating: 4.6,
+    description: 'Tortilla integral con falafel de garbanzos crocantes, hummus, tabule, pepino, tomate y salsa de yogur vegano. Sabor mediterráneo.',
   },
   {
     id: 'veg-4',
@@ -243,6 +266,7 @@ export const vegetarianoItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'vegetariano',
     rating: 4.7,
+    description: 'Capas de pasta con berenjenas, zucchini, espinaca, ricota vegetal y salsa de tomate casera. Gratinada al horno con queso vegano.',
   },
   {
     id: 'veg-5',
@@ -252,6 +276,7 @@ export const vegetarianoItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'vegetariano',
     rating: 4.8,
+    description: 'Quinoa orgánica, kale, remolacha asada, zanahoria, garbanzos, almendras y vinagreta de mostaza. Súper nutritivo y energizante.',
   },
 ];
 
@@ -267,6 +292,7 @@ export const pizzasItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'pizzas',
     rating: 4.8,
+    description: 'Pizza clásica con salsa de tomate, muzzarella, tomates frescos, ajo y albahaca. Masa artesanal a la piedra. Tradición italiana auténtica.',
   },
   {
     id: 'pizza-2',
@@ -276,6 +302,7 @@ export const pizzasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pizzas',
     rating: 4.7,
+    description: 'Blend de muzzarella, provolone, fontina y gorgonzola sobre salsa blanca. Para los verdaderos amantes del queso. Cremosa y deliciosa.',
   },
   {
     id: 'pizza-3',
@@ -285,6 +312,7 @@ export const pizzasItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'pizzas',
     rating: 4.8,
+    description: 'Muzzarella, rodajas de salame calabrés, aceitunas negras y orégano. Borde relleno disponible. Clásico que nunca falla.',
   },
   {
     id: 'pizza-4',
@@ -294,6 +322,7 @@ export const pizzasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pizzas',
     rating: 4.6,
+    description: 'Salsa de tomate, muzzarella, morrones asados, cebolla, champiñones, aceitunas y rúcula fresca. Opción veggie sin renunciar al sabor.',
   },
   {
     id: 'pizza-5',
@@ -303,6 +332,7 @@ export const pizzasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pizzas',
     rating: 4.9,
+    description: 'Pizza extra grande con triple muzzarella y abundante pepperoni. Perfecta para compartir o para los muy hambrientos. 8 porciones generosas.',
   },
 ];
 
@@ -318,6 +348,7 @@ export const pastasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.7,
+    description: 'Fetuccini en cremosa salsa Alfredo con queso parmesano, manteca y un toque de nuez moscada. Incluye pan de ajo. Clásico irresistible.',
   },
   {
     id: 'pasta-2',
@@ -327,6 +358,7 @@ export const pastasItems: FoodItem[] = [
     deliveryTime: '20-30 min',
     category: 'pastas',
     rating: 4.8,
+    description: 'Spaghetti con salsa bolognesa de carne vacuna, tomate, zanahoria, apio y vino tinto. Receta tradicional italiana de cocción lenta.',
   },
   {
     id: 'pasta-3',
@@ -336,6 +368,7 @@ export const pastasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.9,
+    description: 'Ravioles caseros rellenos de ricota y espinaca, con salsa de tomate fresco y albahaca. Espolvoreados con queso rallado. Pasta artesanal.',
   },
   {
     id: 'pasta-4',
@@ -345,6 +378,7 @@ export const pastasItems: FoodItem[] = [
     deliveryTime: '30-40 min',
     category: 'pastas',
     rating: 4.8,
+    description: 'Capas de pasta con salsa bolognesa, bechamel y muzzarella, gratinada al horno. Porción generosa, perfecta para compartir o disfrutar solo.',
   },
   {
     id: 'pasta-5',
@@ -354,6 +388,7 @@ export const pastasItems: FoodItem[] = [
     deliveryTime: '25-35 min',
     category: 'pastas',
     rating: 4.7,
+    description: 'Spaghetti con panceta crocante, yema de huevo, queso parmesano y pimienta negra. Cremosa sin usar crema. Receta romana auténtica.',
   },
 ];
 

@@ -1,10 +1,22 @@
 import React, { FC } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { FoodCardProps } from './types';
 import { styles } from './styles';
 
 const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
+  const router = useRouter();
+
+  const handleCardPress = () => {
+    // Si hay un onPress personalizado, usarlo; sino navegar al detalle
+    if (onPress) {
+      onPress();
+    } else {
+      router.push(`/restaurant/${item.id}` as any);
+    }
+  };
+
   const handleAddToCart = (e: any) => {
     e?.stopPropagation?.();
     if (onAddToCart) {
@@ -13,7 +25,7 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
   };
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity style={styles.container} onPress={handleCardPress} activeOpacity={0.8}>
       <View style={styles.imagePlaceholder}>
         <Ionicons name="fast-food-outline" size={48} color="#bbb" />
         {item.rating && (

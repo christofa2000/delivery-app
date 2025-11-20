@@ -30,11 +30,6 @@ const Search: FC = () => {
   const { results, isSearching, hasResults } = useSearch(searchQuery, selectedCategory);
   const { addItem } = useCartStore();
 
-  const handleFoodItemPress = (item: FoodItem) => {
-    // TODO: Navegar al detalle del producto
-    console.log('Producto seleccionado:', item.name);
-  };
-
   const handleAddToCart = (item: FoodItem) => {
     addItem(item);
     console.log('Agregado al carrito:', item.name);
@@ -43,7 +38,6 @@ const Search: FC = () => {
   const renderFoodItem = ({ item }: { item: FoodItem }) => (
     <FoodCard
       item={item}
-      onPress={() => handleFoodItemPress(item)}
       onAddToCart={handleAddToCart}
     />
   );

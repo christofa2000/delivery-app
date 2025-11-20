@@ -19,11 +19,6 @@ const Home: FC = () => {
     }
   }, [isLoaded, loadCart]);
 
-  const handleFoodItemPress = (item: FoodItem) => {
-    // TODO: Navegar al detalle del producto
-    console.log('Producto seleccionado:', item.name);
-  };
-
   const handleAddToCart = (item: FoodItem) => {
     addItem(item);
     console.log('Agregado al carrito:', item.name);
@@ -37,7 +32,6 @@ const Home: FC = () => {
   const renderFoodItem = ({ item }: { item: FoodItem }) => (
     <FoodCard
       item={item}
-      onPress={() => handleFoodItemPress(item)}
       onAddToCart={handleAddToCart}
     />
   );
