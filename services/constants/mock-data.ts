@@ -13,6 +13,9 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.8,
     description: 'Nuestra burger clásica con carne 100% vacuna, queso cheddar, lechuga, tomate y cebolla caramelizada. Incluye porción de papas fritas crujientes.',
+    isOffer: true,
+    discountPercentage: 20,
+    originalPrice: 1112,
   },
   {
     id: 'pop-2',
@@ -33,6 +36,9 @@ export const popularItems: FoodItem[] = [
     category: 'popular',
     rating: 4.7,
     description: 'Pizza familiar con salsa de tomate casera y abundante muzzarella de primera calidad. Masa artesanal de 48hs de fermentación. Ideal para compartir.',
+    isOffer: true,
+    discountPercentage: 15,
+    originalPrice: 1412,
   },
   {
     id: 'pop-4',
@@ -79,6 +85,9 @@ export const burgersItems: FoodItem[] = [
     category: 'hamburguesas',
     rating: 4.5,
     description: 'Dos medallones de carne flame-grilled, doble queso cheddar, pepinillos, ketchup y mostaza en pan de sésamo XL. Para los amantes del queso.',
+    isOffer: true,
+    discountPercentage: 30,
+    originalPrice: 1571,
   },
   {
     id: 'burg-3',
@@ -135,6 +144,9 @@ export const sushiItems: FoodItem[] = [
     category: 'sushi',
     rating: 4.7,
     description: 'Clásicos rolls California con cangrejo, palta, pepino y sésamo. 10 piezas. Fresco y delicioso, perfecto para iniciarse en el sushi.',
+    isOffer: true,
+    discountPercentage: 25,
+    originalPrice: 1187,
   },
   {
     id: 'sush-3',
@@ -191,6 +203,9 @@ export const peruanaItems: FoodItem[] = [
     category: 'peruana',
     rating: 4.8,
     description: 'Pescado, pulpo, calamares y langostinos marinados en limón con rocoto, cebolla morada y cilantro. Acompañado de camote, choclo y cancha.',
+    isOffer: true,
+    discountPercentage: 20,
+    originalPrice: 1312,
   },
   {
     id: 'peru-3',
@@ -237,6 +252,9 @@ export const vegetarianoItems: FoodItem[] = [
     category: 'vegetariano',
     rating: 4.8,
     description: 'Bowl completo con quinoa, garbanzos especiados, hummus, vegetales asados, palta, semillas y tahini. 100% plant-based y nutritivo.',
+    isOffer: true,
+    discountPercentage: 15,
+    originalPrice: 1082,
   },
   {
     id: 'veg-2',
@@ -333,6 +351,9 @@ export const pizzasItems: FoodItem[] = [
     category: 'pizzas',
     rating: 4.9,
     description: 'Pizza extra grande con triple muzzarella y abundante pepperoni. Perfecta para compartir o para los muy hambrientos. 8 porciones generosas.',
+    isOffer: true,
+    discountPercentage: 25,
+    originalPrice: 1800,
   },
 ];
 
@@ -369,6 +390,9 @@ export const pastasItems: FoodItem[] = [
     category: 'pastas',
     rating: 4.9,
     description: 'Ravioles caseros rellenos de ricota y espinaca, con salsa de tomate fresco y albahaca. Espolvoreados con queso rallado. Pasta artesanal.',
+    isOffer: true,
+    discountPercentage: 20,
+    originalPrice: 1350,
   },
   {
     id: 'pasta-4',

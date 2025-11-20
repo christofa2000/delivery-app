@@ -11,6 +11,9 @@ export interface FoodItem {
   image?: string;
   rating?: number;
   description?: string;
+  isOffer?: boolean;
+  discountPercentage?: number;
+  originalPrice?: number;
 }
 
 /**

@@ -28,6 +28,15 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
     <TouchableOpacity style={styles.container} onPress={handleCardPress} activeOpacity={0.8}>
       <View style={styles.imagePlaceholder}>
         <Ionicons name="fast-food-outline" size={48} color="#bbb" />
+        
+        {/* Badge de oferta */}
+        {item.isOffer && item.discountPercentage && (
+          <View style={styles.offerBadge}>
+            <Text style={styles.offerBadgeText}>{item.discountPercentage}% OFF</Text>
+          </View>
+        )}
+        
+        {/* Rating */}
         {item.rating && (
           <View style={styles.ratingContainer}>
             <Ionicons name="star" size={14} color="#FFB800" />
@@ -35,11 +44,22 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
           </View>
         )}
       </View>
+      
       <View style={styles.content}>
         <Text style={styles.name} numberOfLines={2}>
           {item.name}
         </Text>
-        <Text style={styles.price}>${item.price}</Text>
+        
+        {/* Precio con oferta */}
+        {item.isOffer && item.originalPrice ? (
+          <View style={styles.priceContainer}>
+            <Text style={styles.originalPrice}>${item.originalPrice}</Text>
+            <Text style={styles.price}>${item.price}</Text>
+          </View>
+        ) : (
+          <Text style={styles.price}>${item.price}</Text>
+        )}
+        
         <Text style={styles.restaurant} numberOfLines={1}>
           {item.restaurant}
         </Text>

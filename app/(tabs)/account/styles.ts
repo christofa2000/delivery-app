@@ -25,12 +25,14 @@ export const styles = StyleSheet.create({
     lineHeight: 24,
   },
   loginButton: {
+    flexDirection: 'row',
     backgroundColor: '#e91e63',
     paddingHorizontal: 48,
     paddingVertical: 16,
     borderRadius: 12,
     width: '100%',
     alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 16,
     shadowColor: '#e91e63',
     shadowOffset: {
@@ -45,6 +47,7 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: '600',
+    marginLeft: 8,
   },
   registerButton: {
     backgroundColor: '#fff',
@@ -60,6 +63,76 @@ export const styles = StyleSheet.create({
     color: '#e91e63',
     fontSize: 18,
     fontWeight: '600',
+  },
+  authenticatedContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  scrollContent: {
+    paddingBottom: 32,
+  },
+  userHeader: {
+    alignItems: 'center',
+    padding: 32,
+    backgroundColor: '#fff5f8',
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  userIconContainer: {
+    marginBottom: 16,
+  },
+  userName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 4,
+  },
+  userEmail: {
+    fontSize: 15,
+    color: '#666',
+  },
+  optionsContainer: {
+    marginTop: 8,
+  },
+  optionItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  optionIconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#fff5f8',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  optionText: {
+    flex: 1,
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#333',
+  },
+  logoutButton: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 20,
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#d32f2f',
+    backgroundColor: '#fff',
+  },
+  logoutButtonText: {
+    color: '#d32f2f',
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 8,
   },
 });
 

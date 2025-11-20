@@ -93,5 +93,38 @@ export const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
   },
+  offerBadge: {
+    position: 'absolute',
+    top: 8,
+    left: 8,
+    backgroundColor: '#e91e63',
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    elevation: 3,
+  },
+  offerBadgeText: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  priceContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  originalPrice: {
+    fontSize: 14,
+    color: '#999',
+    textDecorationLine: 'line-through',
+    marginRight: 8,
+  },
 });
 
