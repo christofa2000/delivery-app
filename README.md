@@ -23,20 +23,25 @@
 - 🏷️ **Sistema de ofertas** con descuentos visuales
 - ⭐ **Ratings y reviews** de productos
 - 📱 **Responsive** para mobile y web
+- 🧪 **Tests automáticos** con Jest y React Native Testing Library
+- 🔤 **Tipografía Inter** para una UI moderna
 
 ---
 
 ## 🛠️ Stack Tecnológico
 
-| Tecnología | Uso |
-|------------|-----|
-| **React Native** | Framework UI multiplataforma |
-| **Expo Router** | Navegación file-based |
-| **TypeScript** | Tipado estático |
-| **Zustand** | State management global |
-| **AsyncStorage** | Persistencia local |
-| **Formik + Yup** | Validación de formularios |
-| **Ionicons** | Sistema de íconos |
+| Tecnología                       | Uso                          |
+| -------------------------------- | ---------------------------- |
+| **React Native**                 | Framework UI multiplataforma |
+| **Expo Router**                  | Navegación file-based        |
+| **TypeScript**                   | Tipado estático              |
+| **Zustand**                      | State management global      |
+| **AsyncStorage**                 | Persistencia local           |
+| **Formik + Yup**                 | Validación de formularios    |
+| **Ionicons**                     | Sistema de íconos            |
+| **Jest**                         | Framework de testing         |
+| **React Native Testing Library** | Testing de componentes       |
+| **Inter Font**                   | Tipografía moderna           |
 
 ---
 
@@ -65,6 +70,9 @@ delivery-app/
 │   ├── store/                   # Zustand stores
 │   ├── types/                   # TypeScript types
 │   └── utils/                   # Utilidades
+├── __tests__/                    # Tests automáticos
+│   ├── components/              # Tests de componentes
+│   └── store/                   # Tests de stores
 └── assets/                       # Recursos estáticos
 ```
 
@@ -101,6 +109,9 @@ npm start          # Iniciar Expo Dev Server
 npm run android    # Abrir en Android
 npm run ios        # Abrir en iOS
 npm run web        # Abrir en navegador
+npm test           # Ejecutar tests
+npm run test:watch # Ejecutar tests en modo watch
+npm run test:coverage # Ejecutar tests con cobertura
 ```
 
 ---
@@ -111,22 +122,26 @@ npm run web        # Abrir en navegador
 
 ```typescript
 colors = {
-  primary: '#3A86FF',        // Azul principal
-  secondary: '#8338EC',      // Violeta secundario
-  background: '#FFFFFF',     // Fondo base
-  backgroundSoft: '#F5F7FB', // Fondo suave
-  textPrimary: '#1E1E1E',
-  textSecondary: '#6B7280',
-}
+  primary: "#3A86FF", // Azul principal
+  secondary: "#8338EC", // Violeta secundario
+  background: "#FFFFFF", // Fondo base
+  backgroundSoft: "#F5F7FB", // Fondo suave
+  textPrimary: "#1E1E1E",
+  textSecondary: "#6B7280",
+};
 ```
 
 ### Espaciado
 
 ```typescript
 spacing = {
-  xs: 4, sm: 8, md: 12, 
-  lg: 16, xl: 24, xxl: 32
-}
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 24,
+  xxl: 32,
+};
 ```
 
 ### Componentes Visuales
@@ -134,25 +149,31 @@ spacing = {
 - Cards con sombras sutiles
 - Bordes redondeados (8-16px)
 - Íconos en variante `-outline`
-- Tipografía con pesos 400-700
+- Tipografía **Inter** con pesos 400-700
+- Headers y footer con color azul suave (#EFF4FF)
 
 ---
 
 ## 📱 Pantallas Principales
 
 ### 🏠 Inicio
+
 Listado de productos por categoría con búsqueda y carrito
 
 ### 🔍 Búsqueda
+
 Filtros avanzados por categoría y texto
 
 ### 🛒 Carrito
+
 Gestión de productos con cantidades y subtotales
 
 ### 💳 Checkout
+
 Confirmación de pedido con métodos de pago
 
 ### 👤 Cuenta
+
 Autenticación y perfil de usuario
 
 ---
@@ -162,6 +183,7 @@ Autenticación y perfil de usuario
 ### Zustand Stores
 
 #### **Auth Store** (`auth-store.ts`)
+
 ```typescript
 - user: User | null
 - isAuthenticated: boolean
@@ -170,6 +192,7 @@ Autenticación y perfil de usuario
 ```
 
 #### **Cart Store** (`cart-store.ts`)
+
 ```typescript
 - items: CartItem[]
 - addItem(item)
@@ -205,6 +228,7 @@ Sistema de login con validación usando **Formik + Yup**:
 - ⭐ Lo más pedido
 
 Cada producto incluye:
+
 - Nombre, precio, restaurante
 - Tiempo de entrega estimado
 - Rating y descripción
@@ -246,6 +270,46 @@ Con código 100% compartido entre plataformas.
 
 ---
 
+## 🧪 Testing
+
+La aplicación incluye tests automáticos completos usando **Jest** y **React Native Testing Library**.
+
+### Cobertura de Tests
+
+- ✅ **Cart Store**: Tests para `addItem`, `removeItem`, `updateQuantity`, `clearCart`, `getTotal`, `getTotalItems`
+- ✅ **Auth Store**: Tests para `login`, `logout`, `loadUser`, `setUser` con validaciones
+- ✅ **FoodCard Component**: Tests de renderizado, navegación y botón de agregar al carrito
+- ✅ **SearchBar Component**: Tests de renderizado, eventos y comportamiento
+
+### Ejecutar Tests
+
+```bash
+# Ejecutar todos los tests
+npm test
+
+# Modo watch (re-ejecuta al cambiar archivos)
+npm run test:watch
+
+# Con cobertura de código
+npm run test:coverage
+```
+
+### Estructura de Tests
+
+```
+__tests__/
+├── components/
+│   ├── food-card.test.tsx
+│   └── search-bar.test.tsx
+└── store/
+    ├── cart-store.test.ts
+    └── auth-store.test.ts
+```
+
+**Total: 44 tests pasando** ✅
+
+---
+
 ## 🔧 Configuración
 
 ### Theme Personalizado
@@ -260,6 +324,13 @@ Modifica `services/constants/mock-data.ts` para agregar/editar productos.
 
 Coloca imágenes propias en `assets/images/food/` y actualiza las URLs en mock data.
 
+### Configuración de Tests
+
+Los mocks y configuración de Jest están en:
+
+- `jest.config.js` - Configuración principal
+- `jest.setup.js` - Mocks globales (expo-router, AsyncStorage, react-native)
+
 ---
 
 ## 📄 Licencia
@@ -270,6 +341,8 @@ Este es un proyecto demo educativo.
 
 ## 👥 Autor
 
+**Christian Papa**
+
 Desarrollado como demo de aplicación de delivery moderna con React Native.
 
 ---
@@ -277,11 +350,3 @@ Desarrollado como demo de aplicación de delivery moderna con React Native.
 ## 🤝 Contribuciones
 
 Este es un proyecto de demostración. Para mejoras o sugerencias, abre un issue.
-
----
-
-<div align="center">
-  <p>Hecho con ❤️ usando React Native + Expo</p>
-</div>
-
-
