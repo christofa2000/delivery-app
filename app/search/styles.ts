@@ -1,65 +1,64 @@
 import { StyleSheet } from 'react-native';
+import { colors, spacing, radii, typography } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.backgroundSoft,
   },
   filtersContainer: {
-    paddingVertical: 8,
+    paddingVertical: spacing.md,
+    backgroundColor: colors.background,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
+    borderBottomColor: colors.border,
   },
   categoriesList: {
-    paddingHorizontal: 16,
+    paddingHorizontal: spacing.lg,
   },
   categoryChip: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    backgroundColor: '#f5f5f5',
-    marginRight: 8,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.sm,
+    borderRadius: radii.pill,
+    backgroundColor: colors.badgeSoft,
+    marginRight: spacing.sm,
   },
   categoryChipActive: {
-    backgroundColor: '#e91e63',
+    backgroundColor: colors.primary,
   },
   categoryChipText: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#666',
+    color: colors.textSecondary,
   },
   categoryChipTextActive: {
-    color: '#fff',
+    color: colors.background,
   },
   resultsList: {
-    padding: 16,
+    padding: spacing.lg,
   },
   row: {
     justifyContent: 'space-between',
-    marginBottom: 16,
+    marginBottom: spacing.lg,
   },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 32,
+    padding: spacing.xxl,
   },
   emptyTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 12,
+    ...typography.h2,
+    marginBottom: spacing.md,
     textAlign: 'center',
   },
   emptySubtitle: {
     fontSize: 16,
-    color: '#666',
+    color: colors.textSecondary,
     textAlign: 'center',
     lineHeight: 24,
   },
   emptyText: {
     fontSize: 16,
-    color: '#999',
+    color: colors.textSecondary,
   },
 });
-

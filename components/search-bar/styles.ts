@@ -1,31 +1,26 @@
 import { StyleSheet } from 'react-native';
+import { colors, spacing, radii, shadows } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    marginHorizontal: 16,
-    marginVertical: 12,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    backgroundColor: colors.card,
+    borderRadius: radii.pill,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: spacing.md,
+    marginHorizontal: spacing.lg,
+    marginVertical: spacing.md,
+    borderWidth: 1,
+    borderColor: colors.border,
+    ...shadows.card,
   },
   icon: {
-    marginRight: 12,
+    marginRight: spacing.md,
   },
   input: {
     flex: 1,
     fontSize: 16,
-    color: '#333',
+    color: colors.textPrimary,
   },
 });
-

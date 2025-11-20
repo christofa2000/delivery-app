@@ -1,29 +1,27 @@
 import { StyleSheet } from 'react-native';
+import { colors, spacing, typography } from '@/services/constants/theme';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.backgroundSoft,
   },
   scrollView: {
     flex: 1,
   },
   scrollContent: {
-    paddingBottom: 24,
+    paddingBottom: spacing.xl,
   },
   categorySection: {
-    marginTop: 24,
+    marginTop: spacing.xl,
   },
   categoryTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#333',
-    marginLeft: 16,
-    marginBottom: 16,
+    ...typography.h3,
+    marginLeft: spacing.lg,
+    marginBottom: spacing.lg,
   },
   horizontalList: {
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: spacing.lg,
+    paddingRight: spacing.lg,
   },
 });
-

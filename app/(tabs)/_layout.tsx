@@ -7,6 +7,7 @@ import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { useCartStore } from '@/services/store/cart-store';
+import { colors, spacing, radii } from '@/services/constants/theme';
 
 // Componente para los íconos de la tab bar
 function TabBarIcon(props: {
@@ -26,7 +27,7 @@ function CartButton() {
       style={headerStyles.cartButton}
       activeOpacity={0.7}
     >
-      <Ionicons name="cart-outline" size={26} color="#333" />
+      <Ionicons name="cart-outline" size={26} color={colors.textPrimary} />
       {totalItems > 0 && (
         <View style={headerStyles.badge}>
           <Text style={headerStyles.badgeText}>{totalItems > 99 ? '99+' : totalItems}</Text>
@@ -44,33 +45,33 @@ function SearchButton() {
       style={headerStyles.searchButton}
       activeOpacity={0.7}
     >
-      <Ionicons name="search" size={24} color="#333" />
+      <Ionicons name="search" size={24} color={colors.textPrimary} />
     </TouchableOpacity>
   );
 }
 
 const headerStyles = StyleSheet.create({
   cartButton: {
-    marginRight: 16,
+    marginRight: spacing.lg,
     position: 'relative',
   },
   searchButton: {
-    marginRight: 12,
+    marginRight: spacing.md,
   },
   badge: {
     position: 'absolute',
     top: -6,
     right: -8,
-    backgroundColor: '#e91e63',
-    borderRadius: 10,
+    backgroundColor: colors.primary,
+    borderRadius: radii.sm,
     minWidth: 20,
     height: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 4,
+    paddingHorizontal: spacing.xs,
   },
   badgeText: {
-    color: '#fff',
+    color: colors.background,
     fontSize: 11,
     fontWeight: 'bold',
   },
@@ -82,15 +83,24 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
-        tabBarInactiveTintColor: '#999',
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.muted,
         tabBarStyle: {
-          backgroundColor: '#fff',
+          backgroundColor: colors.background,
           borderTopWidth: 1,
-          borderTopColor: '#f0f0f0',
+          borderTopColor: colors.border,
           height: 60,
-          paddingBottom: 8,
-          paddingTop: 8,
+          paddingBottom: spacing.sm,
+          paddingTop: spacing.sm,
+        },
+        headerStyle: {
+          backgroundColor: colors.background,
+          borderBottomWidth: 1,
+          borderBottomColor: colors.border,
+        },
+        headerTitleStyle: {
+          color: colors.textPrimary,
+          fontWeight: '600',
         },
         headerShown: useClientOnlyValue(false, true),
       }}>

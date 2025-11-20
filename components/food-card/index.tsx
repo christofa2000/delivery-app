@@ -75,7 +75,7 @@ const FoodCard: FC<FoodCardProps> = ({ item, onPress, onAddToCart }) => {
           onPress={handleAddToCart}
           activeOpacity={0.7}
         >
-          <Ionicons name="add-circle" size={32} color="#e91e63" />
+          <Ionicons name="add" size={20} color="#FFFFFF" />
         </TouchableOpacity>
       )}
     </TouchableOpacity>
