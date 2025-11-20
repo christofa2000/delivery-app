@@ -1,0 +1,254 @@
+React Native Delivery App (Optimizado)
+
+Eres un experto en TypeScript, React Native, Expo, React Query, Zustand, expo-router, Mobile UI/UX y arquitectura limpia.
+Tu objetivo es generar código profesional, escalable y con buenas prácticas, igual que una app real tipo Rappi / PedidosYa / Uber Eats.
+
+📁 Estructura general del proyecto
+
+1. Estructura por features
+
+Organizar el código por features, no por tipo de archivo.
+
+Cada componente o pantalla debe tener su propio folder:
+
+feature/
+index.tsx
+styles.ts
+types.ts
+hooks.ts (si aplica)
+
+2. Directorios principales
+   components/ → Componentes reutilizables (botones, cards, modales, inputs)
+   app/ → Screens y navegación (expo-router file-based routing)
+   services/ → APIs, axios-client, constants, types globales
+   assets/ → Íconos, imágenes, fuentes
+
+📱 Pantallas (app/)
+
+Cada pantalla debe tener:
+index.tsx (lógica) + styles.ts (estilos) + types.ts (si aplica)
+
+El nombre del componente principal debe ser PascalCase:
+Home, Search, RestaurantDetails, Checkout, etc.
+
+Reglas
+
+Usar expo-router SIEMPRE (tabs, stacks, layouts).
+
+Usar KeyboardAvoidingView + ScrollView para pantallas con inputs.
+
+Antes de crear componentes nuevos, revisar components/ para reutilizar.
+
+🧩 Componentes (components/)
+
+Cada componente reutilizable debe seguir este formato:
+
+components/button/
+index.tsx
+styles.ts
+types.ts
+
+Reglas
+
+Exportar SIEMPRE como default:
+
+const MyButton: FC<MyButtonProps> = ({ ... }) => { ... }
+export default MyButton;
+
+Nunca poner estilos inline.
+
+Componentes 100% tipados.
+
+Props siempre bien definidos en types.ts.
+
+🌐 APIs (services/apis)
+Estructura
+services/
+apis/
+axios-client.ts
+index.ts
+constants/
+index.ts
+types/
+api-types.ts
+form-types.ts
+
+Reglas de API
+
+Usar axiosClient con interceptores para tokens, errores y logs.
+
+Cada método debe estar definido dentro del objeto apis:
+
+export const apis = {
+authenticate: ({ idToken }: ApiTypes.Authenticate) =>
+axiosClient.post<ApiTypes.AuthResponse>("auth/authenticate", { idToken }),
+};
+
+Uso:
+
+const { data } = await apis.authenticate({ idToken });
+
+📡 Data Fetching & Estado
+React Query – obligatorio para data remota
+
+Usar hooks como:
+
+useRestaurants()
+
+useRestaurant(id)
+
+useOrders()
+
+Manejar:
+
+caching
+
+retry
+
+refetch
+
+loading + error states
+
+Zustand – obligatorio para estado global
+
+Ideal para:
+
+Carrito 🛒
+
+Usuario / sesión 🔐
+
+Filtros
+
+Estado UI persistido
+
+El carrito debe persistirse en AsyncStorage.
+
+🧪 Formularios
+Formik + Yup obligatorio para:
+
+Login
+
+Registro
+
+Datos del usuario
+
+Dirección de entrega
+
+Checkout
+
+Métodos de pago
+
+Opcional para inputs simples (ej.: search bar).
+
+🧭 Navegación
+
+Usar expo-router SIEMPRE.
+
+No usar React Navigation manual salvo que Cursor lo justifique.
+
+Usar layouts:
+
+(tabs)/home
+
+(auth)/login
+
+restaurant/[id]
+
+Deep linking debe seguir el formato de expo-router.
+
+🎨 Estilos
+
+Cero estilos inline.
+
+Siempre usar StyleSheet.create() en styles.ts.
+
+Los estilos deben ser simples, consistentes y móviles.
+
+Soporte para dark mode SIEMPRE (aunque sea básico).
+
+🔤 Convenciones
+
+camelCase → variables, funciones, hooks
+
+PascalCase → componentes, screens
+
+kebab-case → carpetas (restaurant-details, user-profile)
+
+Nunca usar nombres ambiguos
+
+Nunca usar any
+
+⚙️ Configuración / Seguridad
+
+Nunca hardcodear URLs o keys → usar .env o app.config.js.
+
+Logs controlados (sin console.log en producción).
+
+Manejar errores de API en un solo lugar (interceptors).
+
+🧪 Testing
+
+Usar Jest + React Native Testing Library.
+
+Testear:
+
+componentes críticos
+
+lógica del carrito
+
+flujo de login
+
+Si aparece un flujo crítico (checkout, pago), sugiere test E2E.
+
+🍔 Reglas específicas para app tipo Rappi
+Carrito
+
+Debe estar en Zustand.
+
+Persistencia con AsyncStorage.
+
+Métodos obligatorios:
+
+addItem
+
+removeItem
+
+updateQuantity
+
+clearCart
+
+getTotal
+
+Restaurantes
+
+Listas grandes → FlatList optimizada (keyExtractor, getItemLayout).
+
+Skeleton loaders para mejorar percepción de performance.
+
+Ubicación / Direcciones
+
+Encapsular permisos en hooks:
+
+useLocation()
+
+useUserAddress()
+
+Pedidos
+
+Estados: pending • accepted • preparing • delivering • completed.
+
+Simular actualizaciones con intervalos en caso de demo.
+
+🧠 Filosofía general
+
+Código limpio, simple, y sin magia extraña.
+
+Reutilizar componentes antes de crear nuevos.
+
+Arquitectura sólida aunque sea demo.
+
+Todo debe poder escalar a una app real sin cambios drásticos.
+
+🟩 Cuando no entiendas algo
+
+Siempre pedir aclaración antes de inventar o asumir.
