@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native';
+import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useCartStore } from '@/services/store/cart-store';
 import { CartItem } from '@/services/types/api-types';
@@ -41,8 +42,8 @@ const Cart: FC = () => {
       Alert.alert('Carrito vacío', 'Agregá productos para continuar');
       return;
     }
-    // TODO: Implementar flujo de checkout
-    Alert.alert('Checkout', 'Flujo de pago próximamente');
+    // Navegar a la pantalla de checkout
+    router.push('/checkout' as any);
   };
 
   const renderCartItem = ({ item }: { item: CartItem }) => {
